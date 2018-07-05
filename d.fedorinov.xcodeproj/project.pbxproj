@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DA320EE73C900B26C9F /* ResponseCodable.swift */; };
+		2D1F9DA720EE79EB00B26C9F /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DA620EE79EB00B26C9F /* AbstractRequestFactory.swift */; };
+		2D1F9DA920EE7E9A00B26C9F /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */; };
+		2D1F9DAB20EE854600B26C9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DAA20EE854600B26C9F /* User.swift */; };
+		2D1F9DB020EE8A3700B26C9F /* RequestsFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DAF20EE8A3700B26C9F /* RequestsFactories.swift */; };
+		2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB120EE8A9300B26C9F /* Authorization.swift */; };
+		2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB320EE974900B26C9F /* RequestFactory.swift */; };
+		2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */; };
 		2D317C3920EB5ECC00CCAD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */; };
 		2D317C4020EB5ECD00CCAD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */; };
 		2D317C4320EB5ECD00CCAD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D317C4120EB5ECD00CCAD72 /* LaunchScreen.storyboard */; };
 		2D317C4E20EB5ECD00CCAD72 /* d_fedorinovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C4D20EB5ECD00CCAD72 /* d_fedorinovTests.swift */; };
 		2D317C5920EB5ECD00CCAD72 /* d_fedorinovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C5820EB5ECD00CCAD72 /* d_fedorinovUITests.swift */; };
+		2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C7020EE6EA000CCAD72 /* AbstractErrorParser.swift */; };
+		2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */; };
+		2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA5FA20EEAAE600F68678 /* Registration.swift */; };
+		2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */; };
+		B1469B1B4A3367529E45003F /* Pods_d_fedorinovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */; };
+		EBDDE45111F80801A3378674 /* Pods_d_fedorinovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8E2C4DE2781F86360AFE8A /* Pods_d_fedorinovUITests.framework */; };
+		FBFA9FB38D1E7D455C84FA1A /* Pods_d_fedorinov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C06E2C7D7B0CBECE2C27C0 /* Pods_d_fedorinov.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FCF7C7BC4D9D74A63378EEB /* Pods-d.fedorinovUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinovUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinovUITests/Pods-d.fedorinovUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D1F9DA320EE73C900B26C9F /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
+		2D1F9DA620EE79EB00B26C9F /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
+		2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		2D1F9DAA20EE854600B26C9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D1F9DAF20EE8A3700B26C9F /* RequestsFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsFactories.swift; sourceTree = "<group>"; };
+		2D1F9DB120EE8A9300B26C9F /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		2D1F9DB320EE974900B26C9F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deauthorization.swift; sourceTree = "<group>"; };
 		2D317C3520EB5ECC00CCAD72 /* d.fedorinov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d.fedorinov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +67,18 @@
 		2D317C5420EB5ECD00CCAD72 /* d.fedorinovUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = d.fedorinovUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D317C5820EB5ECD00CCAD72 /* d_fedorinovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = d_fedorinovUITests.swift; sourceTree = "<group>"; };
 		2D317C5A20EB5ECD00CCAD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D317C7020EE6EA000CCAD72 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
+		2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		2DEDA5FA20EEAAE600F68678 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserData.swift; sourceTree = "<group>"; };
+		53287E5706ABBCD5280ADABC /* Pods-d.fedorinovTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinovTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinovTests/Pods-d.fedorinovTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69059A82BCE417050E055717 /* Pods-d.fedorinov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinov/Pods-d.fedorinov.debug.xcconfig"; sourceTree = "<group>"; };
+		7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_d_fedorinovTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D8E2C4DE2781F86360AFE8A /* Pods_d_fedorinovUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_d_fedorinovUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B947E09C10A8D4347AD57E5A /* Pods-d.fedorinov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinov.release.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinov/Pods-d.fedorinov.release.xcconfig"; sourceTree = "<group>"; };
+		C1BE598A5351008F38331BE0 /* Pods-d.fedorinovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinovTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinovTests/Pods-d.fedorinovTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC1A5CE809C4A23EE01CAFD9 /* Pods-d.fedorinovUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinovUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinovUITests/Pods-d.fedorinovUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F8C06E2C7D7B0CBECE2C27C0 /* Pods_d_fedorinov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_d_fedorinov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBFA9FB38D1E7D455C84FA1A /* Pods_d_fedorinov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1469B1B4A3367529E45003F /* Pods_d_fedorinovTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +102,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDDE45111F80801A3378674 /* Pods_d_fedorinovUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D1F9DAC20EE874800B26C9F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2D1F9DAF20EE8A3700B26C9F /* RequestsFactories.swift */,
+				2D1F9DB120EE8A9300B26C9F /* Authorization.swift */,
+				2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */,
+				2DEDA5FA20EEAAE600F68678 /* Registration.swift */,
+				2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		2D317C2C20EB5ECC00CCAD72 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +128,8 @@
 				2D317C4C20EB5ECD00CCAD72 /* d.fedorinovTests */,
 				2D317C5720EB5ECD00CCAD72 /* d.fedorinovUITests */,
 				2D317C3620EB5ECC00CCAD72 /* Products */,
+				E41131BACFEF4EB322B6EAA9 /* Pods */,
+				3F2C6BC2256EFC49ECB744F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +193,7 @@
 		2D317C6820EB6F7B00CCAD72 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2D317C6F20EE6DFF00CCAD72 /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -164,6 +218,7 @@
 		2D317C6B20EB701E00CCAD72 /* BussinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				2D1F9DAC20EE874800B26C9F /* Network */,
 				2D317C6E20EB70FF00CCAD72 /* AppDelegate */,
 			);
 			path = BussinessLogic;
@@ -172,6 +227,7 @@
 		2D317C6C20EB702900CCAD72 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				2D1F9DAA20EE854600B26C9F /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -179,6 +235,7 @@
 		2D317C6D20EB703200CCAD72 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				2D1F9DB320EE974900B26C9F /* RequestFactory.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -191,6 +248,41 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		2D317C6F20EE6DFF00CCAD72 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2D317C7020EE6EA000CCAD72 /* AbstractErrorParser.swift */,
+				2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */,
+				2D1F9DA320EE73C900B26C9F /* ResponseCodable.swift */,
+				2D1F9DA620EE79EB00B26C9F /* AbstractRequestFactory.swift */,
+				2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3F2C6BC2256EFC49ECB744F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C06E2C7D7B0CBECE2C27C0 /* Pods_d_fedorinov.framework */,
+				7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */,
+				9D8E2C4DE2781F86360AFE8A /* Pods_d_fedorinovUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E41131BACFEF4EB322B6EAA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69059A82BCE417050E055717 /* Pods-d.fedorinov.debug.xcconfig */,
+				B947E09C10A8D4347AD57E5A /* Pods-d.fedorinov.release.xcconfig */,
+				53287E5706ABBCD5280ADABC /* Pods-d.fedorinovTests.debug.xcconfig */,
+				C1BE598A5351008F38331BE0 /* Pods-d.fedorinovTests.release.xcconfig */,
+				0FCF7C7BC4D9D74A63378EEB /* Pods-d.fedorinovUITests.debug.xcconfig */,
+				EC1A5CE809C4A23EE01CAFD9 /* Pods-d.fedorinovUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D317C5D20EB5ECD00CCAD72 /* Build configuration list for PBXNativeTarget "d.fedorinov" */;
 			buildPhases = (
+				9A6D4A79C559DA6F2F9D8CB4 /* [CP] Check Pods Manifest.lock */,
 				2D317C3120EB5ECC00CCAD72 /* Sources */,
 				2D317C3220EB5ECC00CCAD72 /* Frameworks */,
 				2D317C3320EB5ECC00CCAD72 /* Resources */,
+				ECEE7D4BF3B466F73B047C87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D317C6020EB5ECD00CCAD72 /* Build configuration list for PBXNativeTarget "d.fedorinovTests" */;
 			buildPhases = (
+				2ED2F82BDB4B6DD85202C272 /* [CP] Check Pods Manifest.lock */,
 				2D317C4520EB5ECD00CCAD72 /* Sources */,
 				2D317C4620EB5ECD00CCAD72 /* Frameworks */,
 				2D317C4720EB5ECD00CCAD72 /* Resources */,
@@ -233,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D317C6320EB5ECD00CCAD72 /* Build configuration list for PBXNativeTarget "d.fedorinovUITests" */;
 			buildPhases = (
+				180C7922E272872A640C6D1A /* [CP] Check Pods Manifest.lock */,
 				2D317C5020EB5ECD00CCAD72 /* Sources */,
 				2D317C5120EB5ECD00CCAD72 /* Frameworks */,
 				2D317C5220EB5ECD00CCAD72 /* Resources */,
@@ -316,12 +412,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		180C7922E272872A640C6D1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-d.fedorinovUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ED2F82BDB4B6DD85202C272 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-d.fedorinovTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A6D4A79C559DA6F2F9D8CB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-d.fedorinov-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECEE7D4BF3B466F73B047C87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-d.fedorinov/Pods-d.fedorinov-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-d.fedorinov/Pods-d.fedorinov-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D317C3120EB5ECC00CCAD72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1F9DA720EE79EB00B26C9F /* AbstractRequestFactory.swift in Sources */,
+				2D1F9DB020EE8A3700B26C9F /* RequestsFactories.swift in Sources */,
 				2D317C3920EB5ECC00CCAD72 /* AppDelegate.swift in Sources */,
+				2D1F9DA920EE7E9A00B26C9F /* RequestRouter.swift in Sources */,
+				2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */,
+				2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */,
+				2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */,
+				2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */,
+				2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */,
+				2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */,
+				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
+				2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */,
+				2D1F9DAB20EE854600B26C9F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +667,7 @@
 		};
 		2D317C5E20EB5ECD00CCAD72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69059A82BCE417050E055717 /* Pods-d.fedorinov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -502,6 +686,7 @@
 		};
 		2D317C5F20EB5ECD00CCAD72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B947E09C10A8D4347AD57E5A /* Pods-d.fedorinov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -520,6 +705,7 @@
 		};
 		2D317C6120EB5ECD00CCAD72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53287E5706ABBCD5280ADABC /* Pods-d.fedorinovTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -541,6 +727,7 @@
 		};
 		2D317C6220EB5ECD00CCAD72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1BE598A5351008F38331BE0 /* Pods-d.fedorinovTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +749,7 @@
 		};
 		2D317C6420EB5ECD00CCAD72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FCF7C7BC4D9D74A63378EEB /* Pods-d.fedorinovUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -582,6 +770,7 @@
 		};
 		2D317C6520EB5ECD00CCAD72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC1A5CE809C4A23EE01CAFD9 /* Pods-d.fedorinovUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
