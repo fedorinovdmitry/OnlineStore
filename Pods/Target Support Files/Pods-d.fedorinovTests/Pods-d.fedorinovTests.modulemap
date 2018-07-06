@@ -1,0 +1,6 @@
+framework module Pods_d_fedorinovTests {
+  umbrella header "Pods-d.fedorinovTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
