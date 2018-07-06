@@ -9,27 +9,17 @@
 import Foundation
 import Alamofire
 
-class Authorization: AbstractRequestFactory {
-    
-    var errorParser: AbstractErrorParser
-    var sessionManager: SessionManager
-    var queue: DispatchQueue?
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-    init (errorParser: AbstractErrorParser,
-        sessionManager: SessionManager,
-        queue: DispatchQueue? = DispatchQueue.global(qos: .utility)){
-        self.errorParser = errorParser
-        self.sessionManager = sessionManager
-        self.queue = queue
-    }
-    
-}
 
-extension Authorization: AuthRequestFactory{
+extension RequestToPersonalAccount{
+    
+    func login(userName: String, password: String, completionHandler: @escaping (DataResponse<LoginResult>) -> Void) {
+        let requestModel = Login(baseUrl: baseUrl, login: userName, password: password)
+        self.request(reques: requestModel, completionHandler: completionHandler)
+    }
     struct Login: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "login.json"
+        let path: String = APPURL.wayToLoginAPI
         
         let login: String
         let password: String
@@ -40,9 +30,7 @@ extension Authorization: AuthRequestFactory{
             ]
         }
     }
-    func login(userName: String, password: String, completionHandler: @escaping (DataResponse<LoginResult>) -> Void) {
-        let requestModel = Login(baseUrl: baseUrl, login: userName, password: password)
-        self.request(reques: requestModel, completionHandler: completionHandler)
-    }
 }
+
+
 

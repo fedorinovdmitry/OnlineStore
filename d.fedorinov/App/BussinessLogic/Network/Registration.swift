@@ -9,65 +9,30 @@
 import Foundation
 import Alamofire
 
-class Registration: AbstractRequestFactory {
-    
-    var errorParser: AbstractErrorParser
-    var sessionManager: SessionManager
-    var queue: DispatchQueue?
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-    init (errorParser: AbstractErrorParser,
-          sessionManager: SessionManager,
-          queue: DispatchQueue? = DispatchQueue.global(qos: .utility)){
-        self.errorParser = errorParser
-        self.sessionManager = sessionManager
-        self.queue = queue
-    }
-    
-}
-
-extension Registration: RegistrationRequestFactory{
-    func registration(id_user: Int,
-                      userName: String,
-                      password: String,
-                      email: String,
-                      gender: String,
-                      credit_card: String,
-                      bio: String,
+extension RequestToPersonalAccount{
+    func registration(user:User,
                       completionHandler: @escaping (DataResponse<RegistrationResult>) -> Void) {
-        let requestModel = Regist(baseUrl: baseUrl,
-                                  id_user: id_user,
-                                  login: userName,
-                                  password: password,
-                                  email: email,
-                                  gender: gender,
-                                  credit_card: credit_card,
-                                  bio: bio)
+        let requestModel = Regist(baseUrl: baseUrl, user: user)
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
     
     struct Regist: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "registerUser.json"
-        
-        let id_user: Int
-        let login: String
-        let password: String
-        let email: String
-        let gender: String
-        let credit_card: String
-        let bio: String
+        let path: String = APPURL.wayToRegisterAPI
+        var user: User
         var parameters: Parameters? {
             return [
-                "id_user": id_user,
-                "username": login,
-                "password": password,
-                "email" : email,
-                "gender": gender,
-                "credit_card" : credit_card,
-                "bio" : bio
+                "id_user": user.id,
+                "username": user.userName,
+                "password": user.password,
+                "email" : user.email,
+                "gender": user.gender,
+                "credit_card" : user.credit_car,
+                "bio" : user.bio
             ]
         }
     }
-    
 }
+    
+

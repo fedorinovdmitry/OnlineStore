@@ -11,7 +11,6 @@
 		2D1F9DA720EE79EB00B26C9F /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DA620EE79EB00B26C9F /* AbstractRequestFactory.swift */; };
 		2D1F9DA920EE7E9A00B26C9F /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */; };
 		2D1F9DAB20EE854600B26C9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DAA20EE854600B26C9F /* User.swift */; };
-		2D1F9DB020EE8A3700B26C9F /* RequestsFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DAF20EE8A3700B26C9F /* RequestsFactories.swift */; };
 		2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB120EE8A9300B26C9F /* Authorization.swift */; };
 		2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB320EE974900B26C9F /* RequestFactory.swift */; };
 		2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */; };
@@ -24,6 +23,9 @@
 		2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */; };
 		2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA5FA20EEAAE600F68678 /* Registration.swift */; };
 		2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */; };
+		2DEDA5FF20EF45C000F68678 /* TestNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA5FE20EF45C000F68678 /* TestNetwork.swift */; };
+		2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */; };
+		2DEDA60320EF54DA00F68678 /* ConstantsInProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA60220EF54DA00F68678 /* ConstantsInProject.swift */; };
 		B1469B1B4A3367529E45003F /* Pods_d_fedorinovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */; };
 		EBDDE45111F80801A3378674 /* Pods_d_fedorinovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8E2C4DE2781F86360AFE8A /* Pods_d_fedorinovUITests.framework */; };
 		FBFA9FB38D1E7D455C84FA1A /* Pods_d_fedorinov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C06E2C7D7B0CBECE2C27C0 /* Pods_d_fedorinov.framework */; };
@@ -52,7 +54,6 @@
 		2D1F9DA620EE79EB00B26C9F /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
 		2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		2D1F9DAA20EE854600B26C9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2D1F9DAF20EE8A3700B26C9F /* RequestsFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsFactories.swift; sourceTree = "<group>"; };
 		2D1F9DB120EE8A9300B26C9F /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		2D1F9DB320EE974900B26C9F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deauthorization.swift; sourceTree = "<group>"; };
@@ -71,6 +72,9 @@
 		2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		2DEDA5FA20EEAAE600F68678 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserData.swift; sourceTree = "<group>"; };
+		2DEDA5FE20EF45C000F68678 /* TestNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetwork.swift; sourceTree = "<group>"; };
+		2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToPersonalAccount.swift; sourceTree = "<group>"; };
+		2DEDA60220EF54DA00F68678 /* ConstantsInProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsInProject.swift; sourceTree = "<group>"; };
 		53287E5706ABBCD5280ADABC /* Pods-d.fedorinovTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinovTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinovTests/Pods-d.fedorinovTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69059A82BCE417050E055717 /* Pods-d.fedorinov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinov/Pods-d.fedorinov.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_d_fedorinovTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +116,7 @@
 		2D1F9DAC20EE874800B26C9F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2D1F9DAF20EE8A3700B26C9F /* RequestsFactories.swift */,
+				2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */,
 				2D1F9DB120EE8A9300B26C9F /* Authorization.swift */,
 				2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */,
 				2DEDA5FA20EEAAE600F68678 /* Registration.swift */,
@@ -227,6 +231,7 @@
 		2D317C6C20EB702900CCAD72 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				2DEDA60220EF54DA00F68678 /* ConstantsInProject.swift */,
 				2D1F9DAA20EE854600B26C9F /* User.swift */,
 			);
 			path = Entity;
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */,
+				2DEDA5FE20EF45C000F68678 /* TestNetwork.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -493,17 +499,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1F9DA720EE79EB00B26C9F /* AbstractRequestFactory.swift in Sources */,
-				2D1F9DB020EE8A3700B26C9F /* RequestsFactories.swift in Sources */,
 				2D317C3920EB5ECC00CCAD72 /* AppDelegate.swift in Sources */,
 				2D1F9DA920EE7E9A00B26C9F /* RequestRouter.swift in Sources */,
 				2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */,
 				2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */,
+				2DEDA5FF20EF45C000F68678 /* TestNetwork.swift in Sources */,
 				2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */,
 				2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */,
 				2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */,
 				2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */,
+				2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */,
 				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
 				2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */,
+				2DEDA60320EF54DA00F68678 /* ConstantsInProject.swift in Sources */,
 				2D1F9DAB20EE854600B26C9F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

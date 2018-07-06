@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-//расширение request из Alamofire, добавление функционала для принятие любого дженерик класса поддерживающего протокол Decodable внутри замыкания
+//расширение request из Alamofire, добавление возможности работы с любым типом, поддерживающим протокол Decodable
 extension DataRequest {
     @discardableResult
     func responseCodable<T: Decodable>(

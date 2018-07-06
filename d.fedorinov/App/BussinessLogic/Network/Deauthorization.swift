@@ -9,38 +9,22 @@
 import Foundation
 import Alamofire
 
-class Deauthorization: AbstractRequestFactory {
-    
-    var errorParser: AbstractErrorParser
-    var sessionManager: SessionManager
-    var queue: DispatchQueue?
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
-    init (errorParser: AbstractErrorParser,
-          sessionManager: SessionManager,
-          queue: DispatchQueue? = DispatchQueue.global(qos: .utility)){
-        self.errorParser = errorParser
-        self.sessionManager = sessionManager
-        self.queue = queue
+extension RequestToPersonalAccount{
+    func logOut(id: Int, completionHandler: @escaping (DataResponse<LogOutResult>) -> Void) {
+        let requestModel = LogOut(baseUrl: baseUrl, id: id)
+        self.request(reques: requestModel, completionHandler: completionHandler)
     }
-    
-}
-
-extension Deauthorization: DeauthRequestFactory{
     struct LogOut: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "logout.json"
+        let path: String = APPURL.wayToLogOutAPI
         
-        let id_user: Int
+        let id: Int
         
         var parameters: Parameters? {
             return [
-                "id_user": id_user
+                "id_user": id
             ]
         }
-    }
-    func logOut(id_user: Int, completionHandler: @escaping (DataResponse<LogOutResult>) -> Void) {
-        let requestModel = LogOut(baseUrl: baseUrl, id_user: id_user)
-        self.request(reques: requestModel, completionHandler: completionHandler)
     }
 }
