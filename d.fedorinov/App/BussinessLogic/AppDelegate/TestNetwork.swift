@@ -64,7 +64,7 @@ extension AppDelegate{
 extension AppDelegate{
     func takeCatalogOfGoods(){
         print("получаем каталог товаров")
-        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(){ response in
+        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(pageNumber: 1, idCategory: 1){ response in
             switch response.result {
             case .success(let catalog):
                 print(catalog)

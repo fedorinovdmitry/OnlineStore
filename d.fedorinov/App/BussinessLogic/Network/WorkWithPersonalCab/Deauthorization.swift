@@ -14,17 +14,6 @@ extension RequestToPersonalAccount{
         let requestModel = LogOut(baseUrl: baseUrl, id: id)
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
-    struct LogOut: RequestRouter {
-        let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = APPURL.wayToLogOutAPI
-        
-        let id: Int
-        
-        var parameters: Parameters? {
-            return [
-                "id_user": id
-            ]
-        }
-    }
+    
 }
+

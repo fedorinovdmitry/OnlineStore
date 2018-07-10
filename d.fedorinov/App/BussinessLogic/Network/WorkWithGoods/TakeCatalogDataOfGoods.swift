@@ -10,14 +10,13 @@ import Foundation
 import Alamofire
 extension RequestsToWorkWithGoods{
     
-    func takeCatalogDataOfGoods(completionHandler: @escaping (DataResponse<[GoodFromCatalog]>) -> Void) {
-        let requestModel = CatalogDataRequest(baseUrl: baseUrl)
+    func takeCatalogDataOfGoods(
+        pageNumber:Int,
+        idCategory:Int,
+        completionHandler: @escaping (DataResponse<[GoodFromCatalog]>) -> Void) {
+        let requestModel = CatalogDataRequest(baseUrl: baseUrl, pageNumber: pageNumber, idCategory: idCategory)
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
-    struct CatalogDataRequest: RequestRouter{
-        let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = APPURL.wayToGetCatalogOfGoods
-        let parameters: Parameters? = nil
-    }
+    
 }
+

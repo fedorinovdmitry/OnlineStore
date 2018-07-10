@@ -8,33 +8,7 @@
 
 import Foundation
 
-struct LoginResult: Codable{
-    let result: Int
-    let user: UserParts
-}
-struct LogOutResult: Codable{
-    let result: Int
-}
-struct RegistrationResult: Codable{
-    let result: Int
-    let userMessage: String
-}
-struct ChangeUserDataResult: Codable{
-    let result: Int
-}
-struct UserParts: Codable{
-    let id: Int
-    let login: String
-    let name: String
-    let lastname: String
-    enum CodingKeys: String, CodingKey {
-        case id = "id_user"
-        case login = "user_login"
-        case name = "user_name"
-        case lastname = "user_lastname"
-        
-    }
-}
+
 class User{
     var id: Int
     var userName: String

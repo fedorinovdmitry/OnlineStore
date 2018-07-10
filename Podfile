@@ -6,7 +6,8 @@ target 'd.fedorinov' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.7'
-
+  pod 'OHHTTPStubs/Swift'
+  
   target 'd.fedorinovTests' do
     inherit! :search_paths
     # Pods for testing

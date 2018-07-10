@@ -27,6 +27,7 @@ protocol RequestsToPersonalAccountFactory {
         user:User,
         completionHandler: @escaping (DataResponse<ChangeUserDataResult>)
         -> Void)
+    
 }
 class RequestToPersonalAccount: AbstractRequestFactory, RequestsToPersonalAccountFactory {
     

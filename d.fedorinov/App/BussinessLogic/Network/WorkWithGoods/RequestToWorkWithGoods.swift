@@ -11,12 +11,15 @@ import Alamofire
 
 protocol RequestsToWorkWithGoodsFactory {
     func takeCatalogDataOfGoods(
+        pageNumber:Int,
+        idCategory:Int,
         completionHandler: @escaping (DataResponse<[GoodFromCatalog]>)
         -> Void)
     func takeGood(
         id: Int,
         completionHandler: @escaping (DataResponse<GoodByIdResponse>)
         -> Void)
+    
 }
 class RequestsToWorkWithGoods: AbstractRequestFactory, RequestsToWorkWithGoodsFactory {
     

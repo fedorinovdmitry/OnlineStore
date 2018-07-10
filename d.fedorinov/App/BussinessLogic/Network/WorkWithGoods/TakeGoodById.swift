@@ -14,19 +14,6 @@ extension RequestsToWorkWithGoods{
         let requestModel = GoodRequest(baseUrl: baseUrl, id: id)
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
-    struct GoodRequest: RequestRouter{
-        let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = APPURL.wayToGetGoodById
-        
-        let id: Int
-        
-        var parameters: Parameters? {
-            return [
-                "id_product": id
-            ]
-        }
-        
-        
-    }
+    
 }
+

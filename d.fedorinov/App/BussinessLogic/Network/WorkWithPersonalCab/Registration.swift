@@ -16,23 +16,5 @@ extension RequestToPersonalAccount{
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
     
-    struct Regist: RequestRouter {
-        let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = APPURL.wayToRegisterAPI
-        var user: User
-        var parameters: Parameters? {
-            return [
-                "id_user": user.id,
-                "username": user.userName,
-                "password": user.password,
-                "email" : user.email,
-                "gender": user.gender,
-                "credit_card" : user.credit_car,
-                "bio" : user.bio
-            ]
-        }
-    }
-}
     
-
+}
