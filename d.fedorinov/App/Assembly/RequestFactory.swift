@@ -24,9 +24,13 @@ class RequestFactory {
     
     let sessionQueue = DispatchQueue.global(qos: .utility)
     
+    
     func makeRequestToPersonalAccount() -> RequestsToPersonalAccountFactory {
         let errorParser = makeErrorParser()
         return RequestToPersonalAccount(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
     }
-    
+    func makeRequestToWorkWithGoods() -> RequestsToWorkWithGoodsFactory {
+        let errorParser = makeErrorParser()
+        return RequestsToWorkWithGoods(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
+    }
 }

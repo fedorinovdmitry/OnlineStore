@@ -14,6 +14,9 @@
 		2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB120EE8A9300B26C9F /* Authorization.swift */; };
 		2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB320EE974900B26C9F /* RequestFactory.swift */; };
 		2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */; };
+		2D25FA7820F3A39B00CCE32C /* TakeGoodById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25FA7720F3A39B00CCE32C /* TakeGoodById.swift */; };
+		2D25FA7A20F3A40500CCE32C /* TakeCatalogDataOfGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25FA7920F3A40500CCE32C /* TakeCatalogDataOfGoods.swift */; };
+		2D25FA7C20F3A46300CCE32C /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25FA7B20F3A46300CCE32C /* Good.swift */; };
 		2D317C3920EB5ECC00CCAD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */; };
 		2D317C4020EB5ECD00CCAD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */; };
 		2D317C4320EB5ECD00CCAD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D317C4120EB5ECD00CCAD72 /* LaunchScreen.storyboard */; };
@@ -26,6 +29,7 @@
 		2DEDA5FF20EF45C000F68678 /* TestNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA5FE20EF45C000F68678 /* TestNetwork.swift */; };
 		2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */; };
 		2DEDA60320EF54DA00F68678 /* ConstantsInProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA60220EF54DA00F68678 /* ConstantsInProject.swift */; };
+		2DEDA61220F39C5200F68678 /* RequestToWorkWithGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEDA61120F39C5200F68678 /* RequestToWorkWithGoods.swift */; };
 		B1469B1B4A3367529E45003F /* Pods_d_fedorinovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */; };
 		EBDDE45111F80801A3378674 /* Pods_d_fedorinovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8E2C4DE2781F86360AFE8A /* Pods_d_fedorinovUITests.framework */; };
 		FBFA9FB38D1E7D455C84FA1A /* Pods_d_fedorinov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C06E2C7D7B0CBECE2C27C0 /* Pods_d_fedorinov.framework */; };
@@ -57,6 +61,9 @@
 		2D1F9DB120EE8A9300B26C9F /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		2D1F9DB320EE974900B26C9F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deauthorization.swift; sourceTree = "<group>"; };
+		2D25FA7720F3A39B00CCE32C /* TakeGoodById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeGoodById.swift; sourceTree = "<group>"; };
+		2D25FA7920F3A40500CCE32C /* TakeCatalogDataOfGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeCatalogDataOfGoods.swift; sourceTree = "<group>"; };
+		2D25FA7B20F3A46300CCE32C /* Good.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
 		2D317C3520EB5ECC00CCAD72 /* d.fedorinov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d.fedorinov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 		2DEDA5FE20EF45C000F68678 /* TestNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetwork.swift; sourceTree = "<group>"; };
 		2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToPersonalAccount.swift; sourceTree = "<group>"; };
 		2DEDA60220EF54DA00F68678 /* ConstantsInProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsInProject.swift; sourceTree = "<group>"; };
+		2DEDA61120F39C5200F68678 /* RequestToWorkWithGoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToWorkWithGoods.swift; sourceTree = "<group>"; };
 		53287E5706ABBCD5280ADABC /* Pods-d.fedorinovTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinovTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinovTests/Pods-d.fedorinovTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69059A82BCE417050E055717 /* Pods-d.fedorinov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-d.fedorinov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-d.fedorinov/Pods-d.fedorinov.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4275A9B41C044F98EF4FD0 /* Pods_d_fedorinovTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_d_fedorinovTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,11 +124,8 @@
 		2D1F9DAC20EE874800B26C9F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */,
-				2D1F9DB120EE8A9300B26C9F /* Authorization.swift */,
-				2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */,
-				2DEDA5FA20EEAAE600F68678 /* Registration.swift */,
-				2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */,
+				2DEDA61020F39BB500F68678 /* WorkWithGoods */,
+				2DEDA60F20F39B3000F68678 /* WorkWithPersonalCab */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			children = (
 				2DEDA60220EF54DA00F68678 /* ConstantsInProject.swift */,
 				2D1F9DAA20EE854600B26C9F /* User.swift */,
+				2D25FA7B20F3A46300CCE32C /* Good.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -264,6 +270,28 @@
 				2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2DEDA60F20F39B3000F68678 /* WorkWithPersonalCab */ = {
+			isa = PBXGroup;
+			children = (
+				2DEDA60020EF4B0100F68678 /* RequestToPersonalAccount.swift */,
+				2D1F9DB120EE8A9300B26C9F /* Authorization.swift */,
+				2D1F9DB520EEA3CC00B26C9F /* Deauthorization.swift */,
+				2DEDA5FA20EEAAE600F68678 /* Registration.swift */,
+				2DEDA5FC20EEB10100F68678 /* ChangeUserData.swift */,
+			);
+			path = WorkWithPersonalCab;
+			sourceTree = "<group>";
+		};
+		2DEDA61020F39BB500F68678 /* WorkWithGoods */ = {
+			isa = PBXGroup;
+			children = (
+				2DEDA61120F39C5200F68678 /* RequestToWorkWithGoods.swift */,
+				2D25FA7920F3A40500CCE32C /* TakeCatalogDataOfGoods.swift */,
+				2D25FA7720F3A39B00CCE32C /* TakeGoodById.swift */,
+			);
+			path = WorkWithGoods;
 			sourceTree = "<group>";
 		};
 		3F2C6BC2256EFC49ECB744F4 /* Frameworks */ = {
@@ -504,14 +532,18 @@
 				2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */,
 				2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */,
 				2DEDA5FF20EF45C000F68678 /* TestNetwork.swift in Sources */,
+				2D25FA7A20F3A40500CCE32C /* TakeCatalogDataOfGoods.swift in Sources */,
 				2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */,
 				2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */,
 				2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */,
 				2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */,
+				2D25FA7820F3A39B00CCE32C /* TakeGoodById.swift in Sources */,
 				2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */,
 				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
 				2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */,
 				2DEDA60320EF54DA00F68678 /* ConstantsInProject.swift in Sources */,
+				2D25FA7C20F3A46300CCE32C /* Good.swift in Sources */,
+				2DEDA61220F39C5200F68678 /* RequestToWorkWithGoods.swift in Sources */,
 				2D1F9DAB20EE854600B26C9F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

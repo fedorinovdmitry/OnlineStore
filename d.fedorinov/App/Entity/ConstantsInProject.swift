@@ -14,4 +14,8 @@ struct APPURL {
     static let wayToLogOutAPI = "logout.json"
     static let wayToRegisterAPI = "registerUser.json"
     static let wayToChangeUserDataAPI = "changeUserData.json"
+    static let wayToGetCatalogOfGoods = "catalogData.json"
+    static let wayToGetGoodById = "getGoodById.json"
+    
+    
 }

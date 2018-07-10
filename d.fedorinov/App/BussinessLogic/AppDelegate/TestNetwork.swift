@@ -8,11 +8,11 @@
 
 import Foundation
 
-
+// тест работы запросов с личным кабинетом
 extension AppDelegate{
     func registration(){
         print("регистрируемся")
-        requestFactory.registration(user: user){ response in
+        requestFactoryToPersonalAccount.registration(user: user){ response in
             switch response.result {
             case .success(let registration):
                 print(registration)
@@ -23,9 +23,8 @@ extension AppDelegate{
         }
     }
     func changeUserData(){
-        
         print("изменение данных")
-        requestFactory.changeUserData(user: user){ response in
+        requestFactoryToPersonalAccount.changeUserData(user: user){ response in
             switch response.result {
             case .success(let changeUserData):
                 print(changeUserData)
@@ -36,9 +35,8 @@ extension AppDelegate{
         }
     }
     func authorithation(){
-        
         print("авторизовываемся")
-        requestFactory.login(userName: user.userName, password: user.password){response in
+        requestFactoryToPersonalAccount.login(userName: user.userName, password: user.password){response in
             switch response.result {
             case .success(let login):
                 print(login)
@@ -49,19 +47,44 @@ extension AppDelegate{
         }
     }
     func deautharization(){
-        
         print("деавторизовываемся")
-        requestFactory.logOut(id: user.id){ response in
+        requestFactoryToPersonalAccount.logOut(id: user.id){ response in
             switch response.result {
             case .success(let logout):
                 print(logout)
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            self.takeCatalogOfGoods()
+        }
+        
+    }
+}
+// тест работы запросов с товарами
+extension AppDelegate{
+    func takeCatalogOfGoods(){
+        print("получаем каталог товаров")
+        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(){ response in
+            switch response.result {
+            case .success(let catalog):
+                print(catalog)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self.takeGood()
+        }
+        
+    }
+    func takeGood(){
+        print("получаем товар")
+        requestFactoryToWorkWithGoods.takeGood(id: 123){ response in
+            switch response.result {
+            case .success(let good):
+                print(good)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
-    
-    
-    
     
 }
