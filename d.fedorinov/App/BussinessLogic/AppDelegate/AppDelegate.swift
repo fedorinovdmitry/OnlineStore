@@ -12,74 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let requestFactory = RequestFactory()
+    
+    let requestFactoryToPersonalAccount = RequestFactory().makeRequestToPersonalAccount()
+    let requestFactoryToWorkWithGoods = RequestFactory().makeRequestToWorkWithGoods()
+    let user = User(id: 123, userName: "Somebody", password: "mypassword", email: "some@some.ru", gender: "m", credit_car: "9872389-2424-234224-234", bio: "This is good! I think I will switch to another language")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-        let registration = requestFactory.makeRegistrationRequestFactory()
-        print("регистрируемся")
-        registration.registration(id_user: 123,
-                                  userName: "Somebody",
-                                  password: "mypassword",
-                                  email: "some@some.ru",
-                                  gender: "m",
-                                  credit_card: "9872389-2424-234224-234",
-                                  bio: "This is good! I think I will switch to another language") { response in
-                                    switch response.result {
-                                    case .success(let registration):
-                                        print(registration)
-                                    case .failure(let error):
-                                        print(error.localizedDescription)
-                                    }
-                                    
-                                    // поидее мы же вполне можем при изменении данных изменить только что-то одно, но тут нужно бы знать как обрабатывает сервер а сервер у нас тупой))по-хорошему надо идти в подвал к бекендшикам и разбираться, как понормальному реализовывать изменения данных. Но если в подвал идти далеко и лень, а связи у них там нету, я бы пытался хотя бы при отправке данных записывать данные текущего пользователя и при измемнение отправлять все старые данные,а в изменненом поле соответсвенно новое значение и пошел бы чего-нибудь покушал, чем спуускаться к ним в холодный подвал))
-                                    let changeUserData = self.requestFactory.makeChangeUserDataRequestFactory()
-                                    print("изменение данных")
-                                    changeUserData.changeUserData(id_user: 123,
-                                                                  userName: "Somebody",
-                                                                  password: "mypassword",
-                                                                  email: "some@some.ru",
-                                                                  gender: "m",
-                                                                  credit_card: "9872389-2424-234224-234",
-                                                                  bio: "This is good! I think I will switch to another language"){ response in
-                                                                    switch response.result {
-                                                                    case .success(let changeUserData):
-                                                                        print(changeUserData)
-                                                                    case .failure(let error):
-                                                                        print(error.localizedDescription)
-                                                                    }
-                                                                    let auth = self.requestFactory.makeAuthRequestFactory()
-                                                                    print("авторизовываемся")
-                                                                    auth.login(userName: "Somebody", password: "mypassword") { response in
-                                                                        switch response.result {
-                                                                        case .success(let login):
-                                                                            print(login)
-                                                                        case .failure(let error):
-                                                                            print(error.localizedDescription)
-                                                                        }
-                                                                        let deauth = self.requestFactory.makeDeauthRequestFactory()
-                                                                        print("деавторизовываемся")
-                                                                        deauth.logOut(id_user: 123) { response in
-                                                                            switch response.result {
-                                                                            case .success(let logout):
-                                                                                print(logout)
-                                                                            case .failure(let error):
-                                                                                print(error.localizedDescription)
-                                                                            }
-                                                                        }
-                                                                    }
-                                    }
-                                    
-                                    
-                                    
-        }
-        
-        
-        
-        
-        
+        registration()
         
         
         
