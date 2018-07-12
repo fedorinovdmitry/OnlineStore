@@ -22,7 +22,7 @@ struct ChangeData: RequestRouter {
             "password": user.password,
             "email" : user.email,
             "gender": user.gender,
-            "credit_card" : user.credit_car,
+            "credit_card" : user.creditCard,
             "bio" : user.bio
         ]
     }

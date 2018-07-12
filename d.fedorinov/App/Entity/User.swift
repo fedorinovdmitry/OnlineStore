@@ -15,15 +15,15 @@ class User{
     var password: String
     var email: String
     var gender: String
-    var credit_car: String
+    var creditCard: String
     var bio: String
-    init(id:Int, userName:String, password:String, email:String, gender: String, credit_car: String, bio: String) {
+    init(id:Int, userName:String, password:String, email:String, gender: String, creditCard: String, bio: String) {
         self.id = id
         self.userName = userName
         self.password = password
         self.email = email
         self.gender = gender
-        self.credit_car = credit_car
+        self.creditCard = creditCard
         self.bio = bio
     }
     
