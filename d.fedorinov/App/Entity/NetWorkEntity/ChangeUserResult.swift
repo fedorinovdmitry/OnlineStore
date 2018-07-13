@@ -11,22 +11,24 @@ import Alamofire
 
 struct ChangeData: RequestRouter {
     let baseUrl: URL
-    static let method: HTTPMethod = .get
+    static let method: HTTPMethod = .post
     static let path: String = APPURL.wayToChangeUserDataAPI
     
     var user: User
     var parameters: Parameters? {
         return [
-            "id_user": user.id,
-            "username": user.userName,
+            "id": user.id,
+            "username": user.username,
             "password": user.password,
             "email" : user.email,
             "gender": user.gender,
-            "credit_card" : user.creditCard,
+            "creditCard" : user.creditCard,
             "bio" : user.bio
         ]
     }
 }
 struct ChangeUserDataResult: Codable{
     let result: Int
+    let userMessage: String
 }
+

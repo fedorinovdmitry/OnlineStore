@@ -12,8 +12,8 @@ import Alamofire
 
 extension RequestToPersonalAccount{
     
-    func login(userName: String, password: String, completionHandler: @escaping (DataResponse<LoginResult>) -> Void) {
-        let requestModel = Login(baseUrl: baseUrl, login: userName, password: password)
+    func login(username: String, password: String, completionHandler: @escaping (DataResponse<LoginResult>) -> Void) {
+        let requestModel = Login(baseUrl: baseUrl, login: username, password: password)
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
     

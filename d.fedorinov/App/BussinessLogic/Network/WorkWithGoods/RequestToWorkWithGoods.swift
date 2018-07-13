@@ -11,9 +11,7 @@ import Alamofire
 
 protocol RequestsToWorkWithGoodsFactory {
     func takeCatalogDataOfGoods(
-        pageNumber:Int,
-        idCategory:Int,
-        completionHandler: @escaping (DataResponse<[GoodFromCatalog]>)
+        completionHandler: @escaping (DataResponse<[Good]>)
         -> Void)
     func takeGood(
         id: Int,

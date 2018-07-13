@@ -13,28 +13,7 @@ struct CatalogDataRequest: RequestRouter{
     let baseUrl: URL
     static let method: HTTPMethod = .get
     static let path: String = APPURL.wayToGetCatalogOfGoods
-    let pageNumber:Int
-    let idCategory:Int
-    var parameters: Parameters? {
-        return [
-            "page_number": pageNumber,
-            "id_category": idCategory
-        ]
-    }
-    
+    var parameters: Parameters?
 }
 
 
-
-struct GoodFromCatalog: Codable {
-    let id: Int
-    let productName: String
-    let price: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id_product"
-        case productName = "product_name"
-        case price = "price"
-    }
-    
-}

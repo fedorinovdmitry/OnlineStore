@@ -32,8 +32,8 @@ class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
         let expectation = self.expectation(description: "testTakeCatalogDataOfGoods")
         stubConfig(method: CatalogDataRequest.method, path: CatalogDataRequest.path, resourceName: "catalogData", extensionType:"json")
         
-        var goodsFromCatalogResult: [GoodFromCatalog]?
-        requestsToWorkWithGoodsFactory.takeCatalogDataOfGoods(pageNumber: 1, idCategory: 1){ result in
+        var goodsFromCatalogResult: [Good]?
+        requestsToWorkWithGoodsFactory.takeCatalogDataOfGoods(){ result in
             goodsFromCatalogResult = result.value
             expectation.fulfill()
             
@@ -47,7 +47,7 @@ class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
         stubConfig(method: GoodRequest.method, path: GoodRequest.path, resourceName: "getGoodById", extensionType:"json")
         
         var goodByIdResult: GoodByIdResponse?
-        requestsToWorkWithGoodsFactory.takeGood(id: 123){result in
+        requestsToWorkWithGoodsFactory.takeGood(id: 100){result in
             goodByIdResult = result.value
             expectation.fulfill()
             

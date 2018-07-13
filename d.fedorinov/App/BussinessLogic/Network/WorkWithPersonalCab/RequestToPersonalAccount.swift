@@ -11,7 +11,7 @@ import Alamofire
 
 protocol RequestsToPersonalAccountFactory {
     func login(
-        userName: String,
+        username: String,
         password: String,
         completionHandler: @escaping (DataResponse<LoginResult>)
         -> Void)

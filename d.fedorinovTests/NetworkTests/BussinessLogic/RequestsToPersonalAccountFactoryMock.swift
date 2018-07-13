@@ -22,13 +22,12 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
         let requestFactory = RequestFactoryMock()
         requestsToPersonalAccountFactory = requestFactory.makeRequestToPersonalAccount()
         user = User(id: 123,
-                    userName: "Somebody",
+                    username: "Somebody",
                     password: "mypassword",
                     email: "some@some.ru",
                     gender: "m",
                     creditCard: "9872389-2424-234224-234",
                     bio: "This is good! I think I will switch to another language")
-        
     }
     
     override func tearDown() {
@@ -43,7 +42,7 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
         
         var loginResult: LoginResult?
         requestsToPersonalAccountFactory.login(
-            userName: user.userName,
+            username: user.username,
             password: user.password){ result in
                 loginResult = result.value
                 expectation.fulfill()

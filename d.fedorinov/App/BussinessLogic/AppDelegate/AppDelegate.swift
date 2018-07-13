@@ -12,11 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    let requestFactoryToPersonalAccount = RequestFactory().makeRequestToPersonalAccount()
+    let requestFactoryToWorkWithGoods = RequestFactory().makeRequestToWorkWithGoods()
+    let user = User(id: 123, username: "Somebody", password: "mypassword", email: "some@some.ru", gender: "m", creditCard: "9872389-2424-234224-234", bio: "This is good! I think I will switch to another language")
+    let user2 = User(id: 123, username: "Somebody2", password: "mypassword", email: "some@some.ru", gender: "m", creditCard: "9872389-2424-234224-234", bio: "This is good! I think I will switch to another language")
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+        registration()
         
         return true
     }

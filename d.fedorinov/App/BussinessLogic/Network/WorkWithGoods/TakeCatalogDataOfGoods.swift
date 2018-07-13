@@ -11,10 +11,8 @@ import Alamofire
 extension RequestsToWorkWithGoods{
     
     func takeCatalogDataOfGoods(
-        pageNumber:Int,
-        idCategory:Int,
-        completionHandler: @escaping (DataResponse<[GoodFromCatalog]>) -> Void) {
-        let requestModel = CatalogDataRequest(baseUrl: baseUrl, pageNumber: pageNumber, idCategory: idCategory)
+        completionHandler: @escaping (DataResponse<[Good]>) -> Void) {
+        let requestModel = CatalogDataRequest(baseUrl: baseUrl, parameters: nil)
         self.request(reques: requestModel, completionHandler: completionHandler)
     }
     

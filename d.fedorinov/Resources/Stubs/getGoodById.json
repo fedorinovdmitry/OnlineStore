@@ -1,6 +1,8 @@
 {
     "result": 1,
-    "product_name": "Ноутбук",
-    "product_price": 45600,
-    "product_description": "Мощный игровой ноутбук"
+    "good": {
+        "id": 100,
+        "productName": "good.productName",
+        "productPrice": 1000
+    }
 }
