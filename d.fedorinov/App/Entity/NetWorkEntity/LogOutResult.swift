@@ -18,7 +18,7 @@ struct LogOut: RequestRouter {
     
     var parameters: Parameters? {
         return [
-            "id_user": id
+            "id": id
         ]
     }
 }

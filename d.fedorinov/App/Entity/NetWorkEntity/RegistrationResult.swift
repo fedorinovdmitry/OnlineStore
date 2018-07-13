@@ -11,17 +11,17 @@ import Alamofire
 
 struct Regist: RequestRouter {
     let baseUrl: URL
-    static let method: HTTPMethod = .get
+    static let method: HTTPMethod = .post
     static let path: String = APPURL.wayToRegisterAPI
     var user: User
     var parameters: Parameters? {
         return [
-            "id_user": user.id,
-            "username": user.userName,
+            "id": user.id,
+            "username": user.username,
             "password": user.password,
             "email" : user.email,
             "gender": user.gender,
-            "credit_card" : user.credit_car,
+            "creditCard" : user.creditCard,
             "bio" : user.bio
         ]
     }

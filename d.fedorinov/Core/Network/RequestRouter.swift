@@ -26,7 +26,18 @@ extension RequestRouter {
         return baseUrl.appendingPathComponent(Self.path)
     }
     var encoding: RequestRouterEncoding {
-        return .url
+        let encoding: RequestRouterEncoding
+        switch Self.method {
+        case .get:
+            encoding = .url
+        case .post:
+            encoding = .json
+        case .put:
+            encoding = .json
+        default:
+            encoding = .url
+        }
+        return encoding
     }
     func asURLRequest() throws -> URLRequest {
         var urlRequest = URLRequest(url: fullUrl)

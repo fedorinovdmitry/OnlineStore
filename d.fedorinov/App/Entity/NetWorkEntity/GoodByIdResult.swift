@@ -18,21 +18,11 @@ struct GoodRequest: RequestRouter{
     
     var parameters: Parameters? {
         return [
-            "id_product": id
+            "id": id
         ]
     }
 }
 struct GoodByIdResponse: Codable {
-    let result:Int
-    let productName:String
-    let productPrice:Int
-    let productDescription:String
-    
-    enum CodingKeys: String, CodingKey {
-        case result
-        case productName = "product_name"
-        case productPrice = "product_price"
-        case productDescription = "product_description"
-    }
-    
+    let result: Int
+    let good: Good
 }

@@ -1,14 +1,13 @@
 //
-//  TestNetwork.swift
+//  TestAppDelegate.swift
 //  d.fedorinov
 //
-//  Created by Дмитрий Федоринов on 06.07.2018.
+//  Created by Дмитрий Федоринов on 13.07.2018.
 //  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
 //
 
 import Foundation
 
-// тест работы запросов с личным кабинетом
 extension AppDelegate{
     func registration(){
         print("регистрируемся")
@@ -20,11 +19,12 @@ extension AppDelegate{
                 print(error.localizedDescription)
             }
             self.changeUserData()
+
         }
     }
     func changeUserData(){
         print("изменение данных")
-        requestFactoryToPersonalAccount.changeUserData(user: user){ response in
+        requestFactoryToPersonalAccount.changeUserData(user: user2){ response in
             switch response.result {
             case .success(let changeUserData):
                 print(changeUserData)
@@ -36,7 +36,7 @@ extension AppDelegate{
     }
     func authorithation(){
         print("авторизовываемся")
-        requestFactoryToPersonalAccount.login(userName: user.userName, password: user.password){response in
+        requestFactoryToPersonalAccount.login(username: user2.username, password: user2.password){response in
             switch response.result {
             case .success(let login):
                 print(login)
@@ -46,6 +46,7 @@ extension AppDelegate{
             self.deautharization()
         }
     }
+    
     func deautharization(){
         print("деавторизовываемся")
         requestFactoryToPersonalAccount.logOut(id: user.id){ response in
@@ -55,36 +56,33 @@ extension AppDelegate{
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            self.takeCatalogOfGoods()
-        }
-        
-    }
-}
-// тест работы запросов с товарами
-extension AppDelegate{
-    func takeCatalogOfGoods(){
-        print("получаем каталог товаров")
-        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(pageNumber: 1, idCategory: 1){ response in
-            switch response.result {
-            case .success(let catalog):
-                print(catalog)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
             self.takeGood()
         }
         
     }
     func takeGood(){
         print("получаем товар")
-        requestFactoryToWorkWithGoods.takeGood(id: 123){ response in
+        requestFactoryToWorkWithGoods.takeGood(id: 102){ response in
             switch response.result {
             case .success(let good):
                 print(good)
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            self.takeCatalogOfGoods()
         }
     }
-    
+    func takeCatalogOfGoods(){
+        print("получаем каталог товаров")
+        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(){ response in
+            switch response.result {
+            case .success(let catalog):
+                print(catalog)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+    }
 }

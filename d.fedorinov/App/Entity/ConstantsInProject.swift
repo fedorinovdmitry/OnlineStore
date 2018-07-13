@@ -9,13 +9,15 @@
 import Foundation
 
 struct APPURL {
-    static let baseUrlToAPI = "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"
-    static let wayToLoginAPI = "login.json"
-    static let wayToLogOutAPI = "logout.json"
-    static let wayToRegisterAPI = "registerUser.json"
-    static let wayToChangeUserDataAPI = "changeUserData.json"
-    static let wayToGetCatalogOfGoods = "catalogData.json"
-    static let wayToGetGoodById = "getGoodById.json"
+    static let baseUrlToAPI = "http://127.0.0.1:8080/"
+    static let wayToLoginAPI = "login"
+    static let wayToLogOutAPI = "logout"
+    static let wayToRegisterAPI = "register"
+
+    static let wayToChangeUserDataAPI = "changeUserData"
+    static let wayToGetCatalogOfGoods = "catalogData"
+
+    static let wayToGetGoodById = "getGoodById"
     
     
 }
