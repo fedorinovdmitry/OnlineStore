@@ -11,6 +11,9 @@
 		2D27115B20F7B39400537E21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27115820F7A58D00537E21 /* User.swift */; };
 		2D27115E20F8683E00537E21 /* WorkWithGoodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27115C20F8683E00537E21 /* WorkWithGoodsController.swift */; };
 		2D27116120F8C95D00537E21 /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27116020F8C95D00537E21 /* Good.swift */; };
+		2D5089A320FDFF6600BF0234 /* WorkWithProductReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089A120FDFF6300BF0234 /* WorkWithProductReviews.swift */; };
+		2D5089A620FE044700BF0234 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089A420FE01A900BF0234 /* Review.swift */; };
+		2D5089AB20FE0C4500BF0234 /* EdditingArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089A920FE0B9E00BF0234 /* EdditingArray.swift */; };
 		OBJ_368 /* a_.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* a_.c */; };
 		OBJ_369 /* aes_.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* aes_.c */; };
 		OBJ_370 /* ameth_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* ameth_lib.c */; };
@@ -565,6 +568,9 @@
 		2D27115820F7A58D00537E21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2D27115C20F8683E00537E21 /* WorkWithGoodsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithGoodsController.swift; sourceTree = "<group>"; };
 		2D27116020F8C95D00537E21 /* Good.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
+		2D5089A120FDFF6300BF0234 /* WorkWithProductReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithProductReviews.swift; sourceTree = "<group>"; };
+		2D5089A420FE01A900BF0234 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		2D5089A920FE0B9E00BF0234 /* EdditingArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdditingArray.swift; sourceTree = "<group>"; };
 		"COpenSSL::COpenSSL::Product" /* COpenSSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = COpenSSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_100 /* aes_.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes_.c; sourceTree = "<group>"; };
 		OBJ_101 /* ameth_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ameth_lib.c; sourceTree = "<group>"; };
@@ -1007,6 +1013,7 @@
 			children = (
 				2D27115820F7A58D00537E21 /* User.swift */,
 				2D27116020F8C95D00537E21 /* Good.swift */,
+				2D5089A420FE01A900BF0234 /* Review.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1016,8 +1023,25 @@
 			children = (
 				2D27115620F7A24E00537E21 /* WorkWithPersonalAccountController.swift */,
 				2D27115C20F8683E00537E21 /* WorkWithGoodsController.swift */,
+				2D5089A120FDFF6300BF0234 /* WorkWithProductReviews.swift */,
 			);
 			path = APIlogic;
+			sourceTree = "<group>";
+		};
+		2D5089A720FE0B6900BF0234 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2D5089A820FE0B7100BF0234 /* HelpWithWorkWithArrays */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2D5089A820FE0B7100BF0234 /* HelpWithWorkWithArrays */ = {
+			isa = PBXGroup;
+			children = (
+				2D5089A920FE0B9E00BF0234 /* EdditingArray.swift */,
+			);
+			path = HelpWithWorkWithArrays;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Dependencies */ = {
@@ -1257,6 +1281,7 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2D5089A720FE0B6900BF0234 /* Helpers */,
 				2D27116420F8D84200537E21 /* APIlogic */,
 				2D27115F20F8AFD300537E21 /* Entity */,
 				OBJ_8 /* main.swift */,
@@ -2353,7 +2378,10 @@
 			files = (
 				2D27115A20F7B38C00537E21 /* WorkWithPersonalAccountController.swift in Sources */,
 				OBJ_798 /* main.swift in Sources */,
+				2D5089A620FE044700BF0234 /* Review.swift in Sources */,
+				2D5089A320FDFF6600BF0234 /* WorkWithProductReviews.swift in Sources */,
 				2D27116120F8C95D00537E21 /* Good.swift in Sources */,
+				2D5089AB20FE0C4500BF0234 /* EdditingArray.swift in Sources */,
 				2D27115B20F7B39400537E21 /* User.swift in Sources */,
 				2D27115E20F8683E00537E21 /* WorkWithGoodsController.swift in Sources */,
 			);

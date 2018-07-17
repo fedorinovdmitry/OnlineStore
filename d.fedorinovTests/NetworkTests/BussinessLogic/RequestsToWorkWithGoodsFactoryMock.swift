@@ -1,11 +1,3 @@
-//
-//  RequestsToWorkWithGoodsFactoryMock.swift
-//  d.fedorinovTests
-//
-//  Created by Дмитрий Федоринов on 10.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Alamofire
 import OHHTTPStubs
 import XCTest
@@ -28,12 +20,15 @@ class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
         OHHTTPStubs.removeAllStubs()
         
     }
-    func testTakeCatalogDataOfGoods(){
+    func testTakeCatalogDataOfGoods() {
         let expectation = self.expectation(description: "testTakeCatalogDataOfGoods")
-        stubConfig(method: CatalogDataRequest.method, path: CatalogDataRequest.path, resourceName: "catalogData", extensionType:"json")
+        stubConfig(method: CatalogDataRequest.method,
+                   path: CatalogDataRequest.path,
+                   resourceName: "catalogData",
+                   extensionType:"json")
         
         var goodsFromCatalogResult: [Good]?
-        requestsToWorkWithGoodsFactory.takeCatalogDataOfGoods(){ result in
+        requestsToWorkWithGoodsFactory.takeCatalogDataOfGoods() { result in
             goodsFromCatalogResult = result.value
             expectation.fulfill()
             
@@ -42,12 +37,15 @@ class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         XCTAssertNotNil(goodsFromCatalogResult)
     }
-    func testTakeGood(){
+    func testTakeGood() {
         let expectation = self.expectation(description: "testTakeGood")
-        stubConfig(method: GoodRequest.method, path: GoodRequest.path, resourceName: "getGoodById", extensionType:"json")
+        stubConfig(method: GoodRequest.method,
+                   path: GoodRequest.path,
+                   resourceName: "getGoodById",
+                   extensionType:"json")
         
         var goodByIdResult: GoodByIdResponse?
-        requestsToWorkWithGoodsFactory.takeGood(id: 100){result in
+        requestsToWorkWithGoodsFactory.takeGood(id: 100) { result in
             goodByIdResult = result.value
             expectation.fulfill()
             

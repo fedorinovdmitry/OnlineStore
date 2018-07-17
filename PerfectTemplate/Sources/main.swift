@@ -25,6 +25,7 @@ import PerfectHTTPServer
 let server = HTTPServer()
 let workWithPersonalAccountController = WorkWithPersonalAccountController()
 let workWithGoodsController = WorkWithGoodsController()
+let workWithProductReviewsController = WorkWithProductReviewsController()
 var routes = Routes()
 
 routes.add(method: .post, uri: "/register", handler: workWithPersonalAccountController.register)
@@ -35,18 +36,12 @@ routes.add(method: .post, uri: "/changeUserData", handler: workWithPersonalAccou
 routes.add(method: .get, uri: "/getGoodById", handler: workWithGoodsController.giveGood)
 routes.add(method: .get, uri: "/catalogData", handler: workWithGoodsController.giveCatalogOfGoods)
 
+routes.add(method: .post, uri: "/addReview", handler: workWithProductReviewsController.addReview)
+routes.add(method: .post, uri: "/deleteReview", handler: workWithProductReviewsController.deleteReview)
+routes.add(method: .get, uri: "/listOfGoodsReview", handler: workWithProductReviewsController.giveReviewsOfGood)
+
 server.addRoutes(routes)
 server.serverPort = 8080
-
-
-func addRoutesworkWithPersonalAccountController(){
-    
-    
-}
-func addRoutesworkWithGoodsController(){
-    
-}
-
 
 
 do {

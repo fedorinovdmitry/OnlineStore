@@ -1,23 +1,18 @@
-//
-//  WorkWithPersonalAccountController.swift
-//  COpenSSL
-//
-//  Created by Дмитрий Федоринов on 12.07.2018.
-//
-
 import Foundation
 import PerfectHTTP
 
-//пока пусть в глобальной, потом придумаю где хранить
-var users: [User] = []//зарегестрированные пользователи
-var authUsersId: [Int] = []//авторизованые
+var users: [User] = [] //зарегестрированные пользователи
+var authUsersId: [Int] = [] //id авторизованые пользователи
+
+
 class WorkWithPersonalAccountController {
-    let register: (HTTPRequest, HTTPResponse) -> () = {request, response in
+    
+    let register: (HTTPRequest, HTTPResponse) -> () = { request, response in
         guard
             let str = request.postBodyString,
             let data = str.data(using: .utf8)
             else{
-                response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Wrong user data"))
+                response.completed(status: HTTPResponseStatus.custom(code: 400, message: "Wrong user data"))
                 return
         }
         do {
@@ -44,7 +39,7 @@ class WorkWithPersonalAccountController {
             let str = request.postBodyString,
             let data = str.data(using: .utf8)
             else{
-                response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Wrong user data"))
+                response.completed(status: HTTPResponseStatus.custom(code: 400, message: "Wrong user data"))
                 return
         }
         do {
@@ -55,7 +50,8 @@ class WorkWithPersonalAccountController {
                 let username = json["username"] as? String,
                 let password = json["password"] as? String
                 else{
-                    response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - wrong input value"))
+                    response.completed(
+                        status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - wrong input value"))
                     return
             }
             for user in users {
@@ -77,7 +73,7 @@ class WorkWithPersonalAccountController {
                 }
             }
             
-            response.completed(status: HTTPResponseStatus.custom(code: 500, message: "dont have such user"))
+            response.completed(status: HTTPResponseStatus.custom(code: 404, message: "dont have such user"))
 
            
         } catch {
@@ -90,22 +86,20 @@ class WorkWithPersonalAccountController {
         do {
             let arr = request.params()
             guard arr[0].0 == "id" else{
-                response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Parse data error dont see id"))
+                response.completed(
+                    status: HTTPResponseStatus.custom(code: 400, message: "Parse data error dont see id"))
                 return
             }
             for id in authUsersId{
                 let idlogout = Int(arr[0].1)
                 if id == idlogout ?? -1 {
-                    if let index = authUsersId.index(of: id){
-                        
-                        authUsersId.remove(at: index)
-                        print(authUsersId)
-                        try response.setBody(json: ["result": 1])
-                        response.completed()
-                    }
+                    authUsersId = EdditingArray.deleteElementFromArray(element: id, arrOfElement: authUsersId)
+                    
+                    try response.setBody(json: ["result": 1, "userMessage": "Деавторизован"])
+                    response.completed()
                 }
             }
-            try response.setBody(json: ["result": 0])
+            try response.setBody(json: ["result": 0, "userMessage": "сессия пользователя не найдена"])
             response.completed()
 
         } catch {
@@ -118,7 +112,7 @@ class WorkWithPersonalAccountController {
             let str = request.postBodyString,
             let data = str.data(using: .utf8)
             else{
-                response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Wrong user data"))
+                response.completed(status: HTTPResponseStatus.custom(code: 400, message: "Wrong user data"))
                 return
         }
         do {
@@ -133,13 +127,11 @@ class WorkWithPersonalAccountController {
             
             for user in users {
                 if chageRequest.id == user.id {
-                    if let index = users.index(of: user){
-                        users.remove(at: index)
-                        users.insert(chageRequest, at: index)
-                        print(users)
-                        try response.setBody(json: ["result": 1, "userMessage": "данные измененны"])
-                        response.completed()
-                    }
+                    users = EdditingArray.chageElementsInArray(elementDeleting: user,
+                                                               elementAdding: chageRequest,
+                                                               arrOfElement: users)
+                    try response.setBody(json: ["result": 1, "userMessage": "данные измененны"])
+                    response.completed()
                 }
             }
             

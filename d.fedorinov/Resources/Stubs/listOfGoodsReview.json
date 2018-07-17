@@ -1,0 +1,15 @@
+{
+    "result": 1,
+    "reviews": [
+                {
+                 "idGood": 101,
+                 "idUser": 123,
+                 "text": "testotziv1"
+                },
+                {
+                "idGood": 105,
+                "idUser": 123,
+                "text": "testotziv2"
+                }
+        ]
+}

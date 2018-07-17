@@ -1,17 +1,9 @@
-//
-//  RequestFactory.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 05.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
-
 import Alamofire
 import OHHTTPStubs
 @testable import d_fedorinov
+
 class RequestFactoryMock {
-    func makeErrorParser() -> AbstractErrorParser{
+    func makeErrorParser() -> AbstractErrorParser {
         return ErrorParserStub()
     }
     
@@ -27,10 +19,20 @@ class RequestFactoryMock {
     
     func makeRequestToPersonalAccount() -> RequestsToPersonalAccountFactory {
         let errorParser = makeErrorParser()
-        return RequestToPersonalAccount(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
+        return RequestToPersonalAccount(errorParser: errorParser,
+                                        sessionManager: commonSessionManager,
+                                        queue: sessionQueue)
     }
     func makeRequestToWorkWithGoods() -> RequestsToWorkWithGoodsFactory {
         let errorParser = makeErrorParser()
-        return RequestsToWorkWithGoods(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
+        return RequestsToWorkWithGoods(errorParser: errorParser,
+                                       sessionManager: commonSessionManager,
+                                       queue: sessionQueue)
+    }
+    func makeRequsetsToWorkWithProductReviews() -> RequsetsToWorkWithProductReviewsFactory {
+        let errorParser = makeErrorParser()
+        return RequsetsToWorkWithProductReviews(errorParser: errorParser,
+                                                sessionManager: commonSessionManager,
+                                                queue: sessionQueue)
     }
 }

@@ -1,21 +1,15 @@
-//
-//  RegisterRequest.swift
-//  COpenSSL
-//
-//  Created by Дмитрий Федоринов on 12.07.2018.
-//
-
 import Foundation
 
 struct User{
-    let id: Int //обязательные поля
-    var username: String
-    var password: String
+    let id: Int
+    let username: String
+    let password: String
     var email: String = ""
     var gender: String = ""
     var creditCard: String = ""
     var bio: String = ""
-    init?(_ json: [String:AnyObject]){
+    
+    init? (_ json: [String:AnyObject]) {
         guard
             let idUser = json["id"] as? Int,
             let username = json["username"] as? String,
@@ -42,6 +36,7 @@ struct User{
         
     }
 }
+
 extension User: Equatable{
     static func == (lhs: User, rhs: User) -> Bool{
         return lhs.id == rhs.id
