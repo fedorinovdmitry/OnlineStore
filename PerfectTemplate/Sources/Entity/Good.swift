@@ -1,22 +1,17 @@
-//
-//  Good.swift
-//  PerfectTemplate
-//
-//  Created by Дмитрий Федоринов on 13.07.2018.
-//
-
 import Foundation
 
-struct Good{
+struct Good {
     let id: Int 
     var productName: String
     var productPrice: Int
-    init(id:Int, productName: String, productPrice: Int) {
+    
+    init (id:Int, productName: String, productPrice: Int) {
         self.id = id
         self.productName = productName
         self.productPrice = productPrice
     }
-    init?(_ json: [String:AnyObject]){
+    
+    init? (_ json: [String:AnyObject]) {
         guard
             let id = json["id"] as? Int,
             let productName = json["productName"] as? String,
@@ -29,7 +24,7 @@ struct Good{
         self.productPrice = productPrice
         
     }
-    static func getArrayOfGoods() -> [Good]{
+    static func getArrayOfGoods() -> [Good] {
         var arr:[Good] = []
         for i in 1...10 {
             arr.append(Good(id: 100 + i, productName: "tovar\(100 + i)", productPrice: 1000 + 1))
@@ -37,8 +32,8 @@ struct Good{
         return arr
     }
 }
-extension Good: Equatable{
-    static func == (lhs: Good, rhs: Good) -> Bool{
+extension Good: Equatable {
+    static func == (lhs: Good, rhs: Good) -> Bool {
         return lhs.id == rhs.id
     }
 }

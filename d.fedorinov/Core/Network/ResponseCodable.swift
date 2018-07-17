@@ -1,13 +1,6 @@
-//
-//  ResponseCodable.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 05.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 import Alamofire
+
 //расширение request из Alamofire, добавление возможности работы с любым типом, поддерживающим протокол Decodable
 extension DataRequest {
     @discardableResult
@@ -15,11 +8,15 @@ extension DataRequest {
         errorParser: AbstractErrorParser,
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        let responseSerializer = DataResponseSerializer<T>{ request, response, data, error in
-            if let error = errorParser.parse(response: response, data: data, error: error){
+        let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
+            if let error = errorParser.parse(response: response,
+                                             data: data,
+                                             error: error){
                 return .failure(error)
             }
-            let result = Request.serializeResponseData(response: response, data: data, error: nil)
+            let result = Request.serializeResponseData(response: response,
+                                                       data: data,
+                                                       error: nil)
             switch result{
             case .success(let data):
                 do{
@@ -34,7 +31,9 @@ extension DataRequest {
                 return .failure(customError)
             }
         }
-        return response(queue: queue, responseSerializer: responseSerializer, completionHandler: completionHandler)
+        return response(queue: queue,
+                        responseSerializer: responseSerializer,
+                        completionHandler: completionHandler)
     }
     
     

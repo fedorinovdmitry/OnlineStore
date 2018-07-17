@@ -24,6 +24,8 @@ extension AbstractRequestFactory{
     public func request <T: Decodable>(
         reques: URLRequestConvertible,
         completionHandler: @escaping (DataResponse<T>) -> Void) -> DataRequest {
-        return sessionManager.request(reques).responseCodable(errorParser: errorParser, queue: queue, completionHandler: completionHandler)
+        return sessionManager.request(reques).responseCodable(errorParser: errorParser,
+                                                              queue: queue,
+                                                              completionHandler: completionHandler)
     }
 }

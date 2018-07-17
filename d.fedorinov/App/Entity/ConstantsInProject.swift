@@ -1,11 +1,3 @@
-//
-//  ConstantsInProject.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 06.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 
 struct APPURL {
@@ -13,11 +5,12 @@ struct APPURL {
     static let wayToLoginAPI = "login"
     static let wayToLogOutAPI = "logout"
     static let wayToRegisterAPI = "register"
-
     static let wayToChangeUserDataAPI = "changeUserData"
+    
     static let wayToGetCatalogOfGoods = "catalogData"
-
     static let wayToGetGoodById = "getGoodById"
     
-    
+    static let wayToAddReview = "addReview"
+    static let wayToDeleteReview = "deleteReview"
+    static let wayToGetListOfGoodsReview = "listOfGoodsReview"
 }

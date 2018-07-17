@@ -1,12 +1,3 @@
-//
-//  RequestsToPersonalAccountFactoryMock.swift
-//  d.fedorinovTests
-//
-//  Created by Дмитрий Федоринов on 10.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
-
 import Alamofire
 import OHHTTPStubs
 import XCTest
@@ -16,6 +7,7 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
     
     var requestsToPersonalAccountFactory: RequestsToPersonalAccountFactory!
     var user: User!
+    
     override func setUp() {
         super.setUp()
         
@@ -38,7 +30,10 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
     
     func testLogin() {
         let expectation = self.expectation(description: "testLogin")
-        stubConfig(method: Login.method, path: Login.path, resourceName: "login", extensionType:"json")
+        stubConfig(method: Login.method,
+                   path: Login.path,
+                   resourceName: "login",
+                   extensionType:"json")
         
         var loginResult: LoginResult?
         requestsToPersonalAccountFactory.login(
@@ -53,11 +48,15 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
         XCTAssertNotNil(loginResult)
         
     }
+    
     func testLogout() {
         let expectation = self.expectation(description: "testLogout")
-        stubConfig(method: LogOut.method, path: LogOut.path, resourceName: "logout", extensionType:"json")
+        stubConfig(method: LogOut.method,
+                   path: LogOut.path,
+                   resourceName: "logout",
+                   extensionType:"json")
         
-        var logOutResult: LogOutResult?
+        var logOutResult: StaticAPIResult?
         requestsToPersonalAccountFactory.logOut(id: user.id){ result in
             logOutResult = result.value
             expectation.fulfill()
@@ -68,12 +67,16 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
         XCTAssertNotNil(logOutResult)
         
     }
+    
     func testRegistration() {
         let expectation = self.expectation(description: "testRegistration")
-        stubConfig(method: Regist.method, path: Regist.path, resourceName: "registerUser", extensionType:"json")
+        stubConfig(method: RegisterRouter.method,
+                   path: RegisterRouter.path,
+                   resourceName: "registerUser",
+                   extensionType:"json")
         
-        var registrationResult: RegistrationResult?
-        requestsToPersonalAccountFactory.registration(user: user){result in
+        var registrationResult: StaticAPIResult?
+        requestsToPersonalAccountFactory.registration(user: user) { result in
             registrationResult = result.value
             expectation.fulfill()
         }
@@ -82,11 +85,15 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
         XCTAssertNotNil(registrationResult)
         
     }
+    
     func testChangeUserData() {
         let expectation = self.expectation(description: "testChangeUserData")
-        stubConfig(method: ChangeData.method, path: ChangeData.path, resourceName: "changeUserData", extensionType:"json")
-        var changeUserDataResult: ChangeUserDataResult?
-        requestsToPersonalAccountFactory.changeUserData(user: user){result in
+        stubConfig(method: ChangeData.method,
+                   path: ChangeData.path,
+                   resourceName: "changeUserData",
+                   extensionType:"json")
+        var changeUserDataResult: StaticAPIResult?
+        requestsToPersonalAccountFactory.changeUserData(user: user) { result in
             changeUserDataResult = result.value
             expectation.fulfill()
         }

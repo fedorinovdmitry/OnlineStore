@@ -1,20 +1,19 @@
-//
-//  TakeCatalogDataOfGoods.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 09.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 import Alamofire
-extension RequestsToWorkWithGoods{
+
+extension RequestsToWorkWithGoods {
     
-    func takeCatalogDataOfGoods(
-        completionHandler: @escaping (DataResponse<[Good]>) -> Void) {
+    func takeCatalogDataOfGoods(completionHandler: @escaping (DataResponse<[Good]>) -> Void) {
+        
         let requestModel = CatalogDataRequest(baseUrl: baseUrl, parameters: nil)
         self.request(reques: requestModel, completionHandler: completionHandler)
+        
     }
     
 }
-
+struct CatalogDataRequest: RequestRouter {
+    let baseUrl: URL
+    static let method: HTTPMethod = .get
+    static let path: String = APPURL.wayToGetCatalogOfGoods
+    var parameters: Parameters?
+}

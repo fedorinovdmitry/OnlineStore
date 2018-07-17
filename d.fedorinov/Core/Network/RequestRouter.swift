@@ -25,6 +25,7 @@ extension RequestRouter {
     var fullUrl: URL {
         return baseUrl.appendingPathComponent(Self.path)
     }
+    
     var encoding: RequestRouterEncoding {
         let encoding: RequestRouterEncoding
         switch Self.method {
@@ -39,9 +40,11 @@ extension RequestRouter {
         }
         return encoding
     }
+    
     func asURLRequest() throws -> URLRequest {
         var urlRequest = URLRequest(url: fullUrl)
         urlRequest.httpMethod = Self.method.rawValue
+        
         switch self.encoding {
         case .url:
             return try URLEncoding.default.encode(urlRequest, with: parameters)

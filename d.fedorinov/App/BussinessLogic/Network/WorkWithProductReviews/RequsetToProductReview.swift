@@ -1,30 +1,25 @@
 import Foundation
 import Alamofire
 
-protocol RequestsToPersonalAccountFactory {
-    func login(
-        username: String,
-        password: String,
-        completionHandler: @escaping (DataResponse<LoginResult>)
-        -> Void)
+protocol RequsetsToWorkWithProductReviewsFactory {
     
-    func logOut(
-        id: Int,
+    func addReview(
+        review:Review,
         completionHandler: @escaping (DataResponse<StaticAPIResult>)
         -> Void)
     
-    func registration(
-        user: User,
+    func deleteReview(
+        review:Review,
         completionHandler: @escaping (DataResponse<StaticAPIResult>)
         -> Void)
     
-    func changeUserData(
-        user:User,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
+    func takeGoodsReview(
+        idGood:Int,
+        completionHandler: @escaping (DataResponse<ResultOfGoodsReviews>)
         -> Void)
 }
 
-class RequestToPersonalAccount: AbstractRequestFactory, RequestsToPersonalAccountFactory {
+class RequsetsToWorkWithProductReviews: AbstractRequestFactory, RequsetsToWorkWithProductReviewsFactory {
     var errorParser: AbstractErrorParser
     var sessionManager: SessionManager
     var queue: DispatchQueue?
@@ -37,10 +32,8 @@ class RequestToPersonalAccount: AbstractRequestFactory, RequestsToPersonalAccoun
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
+        
     }
+    
 }
-
-
-
-
 

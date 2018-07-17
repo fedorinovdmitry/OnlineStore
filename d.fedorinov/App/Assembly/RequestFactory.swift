@@ -1,16 +1,8 @@
-//
-//  RequestFactory.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 05.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 
 class RequestFactory {
-    func makeErrorParser() -> AbstractErrorParser{
+    func makeErrorParser() -> AbstractErrorParser {
         return ErrorParser()
     }
     
@@ -24,13 +16,22 @@ class RequestFactory {
     
     let sessionQueue = DispatchQueue.global(qos: .utility)
     
-    
     func makeRequestToPersonalAccount() -> RequestsToPersonalAccountFactory {
         let errorParser = makeErrorParser()
-        return RequestToPersonalAccount(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
+        return RequestToPersonalAccount(errorParser: errorParser,
+                                        sessionManager: commonSessionManager,
+                                        queue: sessionQueue)
     }
     func makeRequestToWorkWithGoods() -> RequestsToWorkWithGoodsFactory {
         let errorParser = makeErrorParser()
-        return RequestsToWorkWithGoods(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
+        return RequestsToWorkWithGoods(errorParser: errorParser,
+                                       sessionManager: commonSessionManager,
+                                       queue: sessionQueue)
+    }
+    func makeRequsetsToWorkWithProductReviews() -> RequsetsToWorkWithProductReviewsFactory {
+        let errorParser = makeErrorParser()
+        return RequsetsToWorkWithProductReviews(errorParser: errorParser,
+                                                sessionManager: commonSessionManager,
+                                                queue: sessionQueue)
     }
 }

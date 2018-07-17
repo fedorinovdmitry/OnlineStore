@@ -8,10 +8,11 @@
 
 import Foundation
 
-extension AppDelegate{
-    func registration(){
+extension AppDelegate {
+    
+    func registration() {
         print("регистрируемся")
-        requestFactoryToPersonalAccount.registration(user: user){ response in
+        requestFactoryToPersonalAccount.registration(user: user) { response in
             switch response.result {
             case .success(let registration):
                 print(registration)
@@ -19,12 +20,12 @@ extension AppDelegate{
                 print(error.localizedDescription)
             }
             self.changeUserData()
-
         }
     }
-    func changeUserData(){
+    
+    func changeUserData() {
         print("изменение данных")
-        requestFactoryToPersonalAccount.changeUserData(user: user2){ response in
+        requestFactoryToPersonalAccount.changeUserData(user: user2) { response in
             switch response.result {
             case .success(let changeUserData):
                 print(changeUserData)
@@ -34,9 +35,10 @@ extension AppDelegate{
             self.authorithation()
         }
     }
-    func authorithation(){
+    
+    func authorithation() {
         print("авторизовываемся")
-        requestFactoryToPersonalAccount.login(username: user2.username, password: user2.password){response in
+        requestFactoryToPersonalAccount.login(username: user2.username, password: user2.password) { response in
             switch response.result {
             case .success(let login):
                 print(login)
@@ -47,9 +49,9 @@ extension AppDelegate{
         }
     }
     
-    func deautharization(){
+    func deautharization() {
         print("деавторизовываемся")
-        requestFactoryToPersonalAccount.logOut(id: user.id){ response in
+        requestFactoryToPersonalAccount.logOut(id: user.id) { response in
             switch response.result {
             case .success(let logout):
                 print(logout)
@@ -60,9 +62,10 @@ extension AppDelegate{
         }
         
     }
-    func takeGood(){
+    
+    func takeGood() {
         print("получаем товар")
-        requestFactoryToWorkWithGoods.takeGood(id: 102){ response in
+        requestFactoryToWorkWithGoods.takeGood(id: 102) { response in
             switch response.result {
             case .success(let good):
                 print(good)
@@ -72,17 +75,52 @@ extension AppDelegate{
             self.takeCatalogOfGoods()
         }
     }
-    func takeCatalogOfGoods(){
+    func takeCatalogOfGoods() {
         print("получаем каталог товаров")
-        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(){ response in
+        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods() { response in
             switch response.result {
             case .success(let catalog):
                 print(catalog)
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            
+            self.addReview()
         }
         
+    }
+    func addReview() {
+        print("добавляем новый отзыв")
+        requestFactoryToWorkWithProductReviews.addReview(review: review) { response in
+            switch response.result {
+            case .success(let addReviewResult):
+                print(addReviewResult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self.takeListOfGoodsReview()
+        }
+    }
+    func takeListOfGoodsReview() {
+        print("получаем отзывы о товаре")
+        requestFactoryToWorkWithProductReviews.takeGoodsReview(idGood: review.idGood) { response in
+            switch response.result {
+            case .success(let listOfGoodsReview):
+                print(listOfGoodsReview)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self.deleteReview()
+        }
+    }
+    func deleteReview() {
+        print("удаляем отзыв")
+        requestFactoryToWorkWithProductReviews.deleteReview(review: review) { response in
+            switch response.result {
+            case .success(let deleteReviewResult):
+                print(deleteReviewResult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

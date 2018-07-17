@@ -1,13 +1,4 @@
-//
-//  User.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 05.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
-
 
 struct User: Codable{
     var id: Int
@@ -17,7 +8,15 @@ struct User: Codable{
     var gender: String
     var creditCard: String
     var bio: String
-    init(id:Int, username:String, password:String, email:String, gender: String, creditCard: String, bio: String) {
+    
+    init(id:Int,
+         username:String,
+         password:String,
+         email:String,
+         gender: String,
+         creditCard: String,
+         bio: String) {
+        
         self.id = id
         self.username = username
         self.password = password
