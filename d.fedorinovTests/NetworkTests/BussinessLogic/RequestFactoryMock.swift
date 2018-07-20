@@ -2,6 +2,7 @@ import Alamofire
 import OHHTTPStubs
 @testable import d_fedorinov
 
+/// Фабрика пораждающая моковые запросы
 class RequestFactoryMock {
     func makeErrorParser() -> AbstractErrorParser {
         return ErrorParserStub()
@@ -34,5 +35,11 @@ class RequestFactoryMock {
         return RequsetsToWorkWithProductReviews(errorParser: errorParser,
                                                 sessionManager: commonSessionManager,
                                                 queue: sessionQueue)
+    }
+    func makeRequsetsToWorkWithBasket() -> RequsetsToWorkWithBasketFactory {
+        let errorParser = makeErrorParser()
+        return RequsetsToWorkWithBasket(errorParser: errorParser,
+                                        sessionManager: commonSessionManager,
+                                        queue: sessionQueue)
     }
 }

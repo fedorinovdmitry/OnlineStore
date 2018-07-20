@@ -1,7 +1,7 @@
 import Foundation
 import PerfectHTTP
 
-let arrOfGoods = Good.getArrayOfGoods()
+var arrOfGoods = Good.getArrayOfGoods()
 
 class WorkWithGoodsController {
     
@@ -20,7 +20,8 @@ class WorkWithGoodsController {
                     try response.setBody(json: ["result": 1,
                                                 "good": ["id": good.id,
                                                          "productName": good.productName,
-                                                         "productPrice": good.productPrice]
+                                                         "productPrice": good.productPrice,
+                                                         "quantity": good.quantity]
                                         ])
                     response.completed()
                     return
@@ -42,6 +43,7 @@ class WorkWithGoodsController {
                 dic["id"] = good.id as AnyObject
                 dic["productName"] = good.productName as AnyObject
                 dic["productPrice"] = good.productPrice as AnyObject
+                dic["quantity"] = good.quantity as AnyObject
                 jsonDic.append(dic)
             }
             try response.setBody(json: jsonDic)

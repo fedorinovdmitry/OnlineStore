@@ -1,13 +1,6 @@
-//
-//  TestAppDelegate.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 13.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 
+// вынесенная временная фигня для тестов бека
 extension AppDelegate {
     
     func registration() {
@@ -121,6 +114,62 @@ extension AppDelegate {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            self.addGoodToBasket()
         }
     }
+    func addGoodToBasket() {
+        print("добавляем товар в корзину")
+        requestFactoryToWorkWithBasket.addGoodToBasket(idUser: 123,
+                                                       idGood: 110,
+                                                       quantity: 2) { response in
+            switch response.result {
+            case .success(let addGoodToBasketResult):
+                print(addGoodToBasketResult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self.addGoodToBasket2()
+        }
+        
+    }
+    func addGoodToBasket2() {
+        print("добавляем товар2 в корзину")
+        requestFactoryToWorkWithBasket.addGoodToBasket(idUser: 123,
+                                                       idGood: 106,
+                                                       quantity: 2) { response in
+            switch response.result {
+            case .success(let addGoodToBasketResult):
+                print(addGoodToBasketResult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self.deleteGoodFromBasket()
+        }
+    }
+    func deleteGoodFromBasket() {
+        print("удаляем товар из корзины")
+        requestFactoryToWorkWithBasket.deleteGoodFromBasket(idUser: 123,
+                                                            idGood: 106,
+                                                            quantity: 2){ response in
+            switch response.result {
+            case .success(let deleteGoodFromBasketResult):
+                print(deleteGoodFromBasketResult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self.payOrder()
+        }
+    }
+    func payOrder() {
+        print("оплачиваем заказ")
+        requestFactoryToWorkWithBasket.payOrder(idUser: 123) { response in
+            switch response.result {
+            case .success(let payOrderResult):
+                print(payOrderResult)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 }

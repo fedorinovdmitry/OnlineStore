@@ -3,6 +3,7 @@ import OHHTTPStubs
 import XCTest
 @testable import d_fedorinov
 
+/// Тесты запросов по работе с товарами
 class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
     
     var requestsToWorkWithGoodsFactory: RequestsToWorkWithGoodsFactory!
@@ -20,6 +21,7 @@ class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
         OHHTTPStubs.removeAllStubs()
         
     }
+    
     func testTakeCatalogDataOfGoods() {
         let expectation = self.expectation(description: "testTakeCatalogDataOfGoods")
         stubConfig(method: CatalogDataRequest.method,
@@ -37,6 +39,7 @@ class RequestsToWorkWithGoodsFactoryTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         XCTAssertNotNil(goodsFromCatalogResult)
     }
+    
     func testTakeGood() {
         let expectation = self.expectation(description: "testTakeGood")
         stubConfig(method: GoodRequest.method,

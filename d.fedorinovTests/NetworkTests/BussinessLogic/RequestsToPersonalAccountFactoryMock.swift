@@ -3,6 +3,7 @@ import OHHTTPStubs
 import XCTest
 @testable import d_fedorinov
 
+/// Тесты запросов по работе с личным аккаунтом клиента
 class RequestsToPersonalAccountFactoryTests: XCTestCase {
     
     var requestsToPersonalAccountFactory: RequestsToPersonalAccountFactory!
@@ -92,6 +93,7 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
                    path: ChangeData.path,
                    resourceName: "changeUserData",
                    extensionType:"json")
+        
         var changeUserDataResult: StaticAPIResult?
         requestsToPersonalAccountFactory.changeUserData(user: user) { result in
             changeUserDataResult = result.value

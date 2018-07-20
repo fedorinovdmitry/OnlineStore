@@ -3,6 +3,7 @@ import OHHTTPStubs
 import XCTest
 @testable import d_fedorinov
 
+/// Тесты запросов по работе с отзывами о товаре
 class RequsetsToWorkWithProductReviewsFactoryTests: XCTestCase {
     
     var requestsToWorkWithProductReviewsFactory: RequsetsToWorkWithProductReviewsFactory!
@@ -13,7 +14,9 @@ class RequsetsToWorkWithProductReviewsFactoryTests: XCTestCase {
         
         let requestFactory = RequestFactoryMock()
         requestsToWorkWithProductReviewsFactory = requestFactory.makeRequsetsToWorkWithProductReviews()
-        review = Review(idGood: 110, idUser: 123, textOFReview: "содержание отзыва о товаре")
+        review = Review(idGood: 110,
+                        idUser: 123,
+                        textOFReview: "содержание отзыва о товаре")
     }
     
     override func tearDown() {

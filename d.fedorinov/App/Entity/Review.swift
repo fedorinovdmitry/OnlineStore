@@ -1,5 +1,6 @@
 import Foundation
 
+/** Структура хранящая отзывы о конкретном товаре, конкретным пользователем */
 struct Review: Codable {
     let idGood: Int
     let idUser: Int
