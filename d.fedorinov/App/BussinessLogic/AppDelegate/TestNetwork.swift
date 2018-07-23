@@ -12,7 +12,7 @@ extension AppDelegate {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            self.changeUserData()
+//            self.changeUserData()
         }
     }
     
