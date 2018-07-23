@@ -1,7 +1,7 @@
 import UIKit
 import OHHTTPStubs
 
-
+///контроллер экрана авторизации
 class LoginController: UIViewController {
     
 //MARK: - Constants
@@ -20,7 +20,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self,
+                                                         action: #selector(self.hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
         
     }
@@ -81,9 +82,6 @@ class LoginController: UIViewController {
         }
         return false
     }
-    
-//MARK: - Public methods
-    
     
 //MARK: - Private methods
     ///когда клавиатура появляется

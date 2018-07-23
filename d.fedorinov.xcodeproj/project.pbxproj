@@ -40,7 +40,6 @@
 		2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */; };
 		2D48C7FB2106066F00A3D217 /* PersonalCab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D48C7FA2106066F00A3D217 /* PersonalCab.storyboard */; };
 		2D48C800210613C600A3D217 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C7FF210613C600A3D217 /* LoginController.swift */; };
-		2D48C8032106406000A3D217 /* TestNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27116220F8D6E300537E21 /* TestNetwork.swift */; };
 		2D48C8062106564000A3D217 /* UserdefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C8052106564000A3D217 /* UserdefaultsExtension.swift */; };
 		2D48C80821065DC600A3D217 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C80721065DC600A3D217 /* WelcomeViewController.swift */; };
 		2D48C80A210666FB00A3D217 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C809210666FB00A3D217 /* RegistrationViewController.swift */; };
@@ -117,7 +116,6 @@
 		2D25FA7F20F4DD1900CCE32C /* RequestFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryMock.swift; sourceTree = "<group>"; };
 		2D25FA8120F4DD6D00CCE32C /* ErrorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogic.swift; sourceTree = "<group>"; };
 		2D25FA8420F4DF3000CCE32C /* RequestsToPersonalAccountFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsToPersonalAccountFactoryMock.swift; sourceTree = "<group>"; };
-		2D27116220F8D6E300537E21 /* TestNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetwork.swift; sourceTree = "<group>"; };
 		2D317C3520EB5ECC00CCAD72 /* d.fedorinov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d.fedorinov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -411,7 +409,6 @@
 			isa = PBXGroup;
 			children = (
 				2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */,
-				2D27116220F8D6E300537E21 /* TestNetwork.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -771,7 +768,6 @@
 				2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */,
 				2D07D66820F5026200733B11 /* GoodByIdResult.swift in Sources */,
 				2D25FA7A20F3A40500CCE32C /* TakeCatalogDataOfGoods.swift in Sources */,
-				2D48C8032106406000A3D217 /* TestNetwork.swift in Sources */,
 				2D5089B820FE295F00BF0234 /* AddReview.swift in Sources */,
 				2D5089AE20FE117700BF0234 /* StaticAPIResult.swift in Sources */,
 				2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */,

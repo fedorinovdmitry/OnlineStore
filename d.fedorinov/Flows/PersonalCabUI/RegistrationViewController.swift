@@ -17,7 +17,8 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var creditCard: UITextField!
     @IBOutlet weak var bio: UITextField!
     
-//MARK: - LifeStyle ViewController
+
+    //MARK: - LifeStyle ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         let hideKeyboardGesture = UITapGestureRecognizer(target: self,
@@ -97,6 +98,10 @@ class RegistrationViewController: UIViewController {
         }else {
             alertFactory.showRegisterError(controller: self)
         }
+    }
+    @IBAction func backToLogin(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindRegistration",
+                                sender: self)
     }
     
 //MARK: - Private methods
