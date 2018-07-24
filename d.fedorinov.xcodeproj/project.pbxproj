@@ -31,7 +31,6 @@
 		2D25FA8020F4DD1900CCE32C /* RequestFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25FA7F20F4DD1900CCE32C /* RequestFactoryMock.swift */; };
 		2D25FA8220F4DD6D00CCE32C /* ErrorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25FA8120F4DD6D00CCE32C /* ErrorLogic.swift */; };
 		2D25FA8520F4DF3000CCE32C /* RequestsToPersonalAccountFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25FA8420F4DF3000CCE32C /* RequestsToPersonalAccountFactoryMock.swift */; };
-		2D27116320F8D6E300537E21 /* TestNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27116220F8D6E300537E21 /* TestNetwork.swift */; };
 		2D317C3920EB5ECC00CCAD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */; };
 		2D317C4020EB5ECD00CCAD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */; };
 		2D317C4320EB5ECD00CCAD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D317C4120EB5ECD00CCAD72 /* LaunchScreen.storyboard */; };
@@ -39,6 +38,12 @@
 		2D317C5920EB5ECD00CCAD72 /* d_fedorinovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C5820EB5ECD00CCAD72 /* d_fedorinovUITests.swift */; };
 		2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C7020EE6EA000CCAD72 /* AbstractErrorParser.swift */; };
 		2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */; };
+		2D48C7FB2106066F00A3D217 /* PersonalCab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D48C7FA2106066F00A3D217 /* PersonalCab.storyboard */; };
+		2D48C800210613C600A3D217 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C7FF210613C600A3D217 /* LoginController.swift */; };
+		2D48C8062106564000A3D217 /* UserdefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C8052106564000A3D217 /* UserdefaultsExtension.swift */; };
+		2D48C80821065DC600A3D217 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C80721065DC600A3D217 /* WelcomeViewController.swift */; };
+		2D48C80A210666FB00A3D217 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C809210666FB00A3D217 /* RegistrationViewController.swift */; };
+		2D48C80E21068DAD00A3D217 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48C80D21068DAD00A3D217 /* AlertFactory.swift */; };
 		2D50899E20FDFA1200BF0234 /* RequsetToProductReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50899D20FDFA1200BF0234 /* RequsetToProductReview.swift */; };
 		2D5089A020FDFEDA00BF0234 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50899F20FDFEDA00BF0234 /* Review.swift */; };
 		2D5089AE20FE117700BF0234 /* StaticAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089AD20FE117700BF0234 /* StaticAPIResult.swift */; };
@@ -111,7 +116,6 @@
 		2D25FA7F20F4DD1900CCE32C /* RequestFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryMock.swift; sourceTree = "<group>"; };
 		2D25FA8120F4DD6D00CCE32C /* ErrorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogic.swift; sourceTree = "<group>"; };
 		2D25FA8420F4DF3000CCE32C /* RequestsToPersonalAccountFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsToPersonalAccountFactoryMock.swift; sourceTree = "<group>"; };
-		2D27116220F8D6E300537E21 /* TestNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetwork.swift; sourceTree = "<group>"; };
 		2D317C3520EB5ECC00CCAD72 /* d.fedorinov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d.fedorinov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +129,12 @@
 		2D317C5A20EB5ECD00CCAD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D317C7020EE6EA000CCAD72 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		2D317C7220EE6F8600CCAD72 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		2D48C7FA2106066F00A3D217 /* PersonalCab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalCab.storyboard; sourceTree = "<group>"; };
+		2D48C7FF210613C600A3D217 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2D48C8052106564000A3D217 /* UserdefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsExtension.swift; sourceTree = "<group>"; };
+		2D48C80721065DC600A3D217 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2D48C809210666FB00A3D217 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		2D48C80D21068DAD00A3D217 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		2D50899D20FDFA1200BF0234 /* RequsetToProductReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequsetToProductReview.swift; sourceTree = "<group>"; };
 		2D50899F20FDFEDA00BF0234 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		2D5089AD20FE117700BF0234 /* StaticAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticAPIResult.swift; sourceTree = "<group>"; };
@@ -333,6 +343,7 @@
 		2D317C6720EB6F5D00CCAD72 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				2D48C7FC21060C1200A3D217 /* PersonalCabUI */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -348,6 +359,7 @@
 		2D317C6920EB6F9F00CCAD72 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D48C7F92106061B00A3D217 /* Storyboard */,
 				2D07D65720F4E83900733B11 /* Stubs */,
 				2D317C3F20EB5ECD00CCAD72 /* Assets.xcassets */,
 				2D317C4120EB5ECD00CCAD72 /* LaunchScreen.storyboard */,
@@ -387,6 +399,7 @@
 		2D317C6D20EB703200CCAD72 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				2D48C8042106562500A3D217 /* Helpers */,
 				2D1F9DB320EE974900B26C9F /* RequestFactory.swift */,
 			);
 			path = Assembly;
@@ -396,7 +409,6 @@
 			isa = PBXGroup;
 			children = (
 				2D317C3820EB5ECC00CCAD72 /* AppDelegate.swift */,
-				2D27116220F8D6E300537E21 /* TestNetwork.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -411,6 +423,33 @@
 				2D1F9DA820EE7E9A00B26C9F /* RequestRouter.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2D48C7F92106061B00A3D217 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2D48C7FA2106066F00A3D217 /* PersonalCab.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		2D48C7FC21060C1200A3D217 /* PersonalCabUI */ = {
+			isa = PBXGroup;
+			children = (
+				2D48C7FF210613C600A3D217 /* LoginController.swift */,
+				2D48C80721065DC600A3D217 /* WelcomeViewController.swift */,
+				2D48C809210666FB00A3D217 /* RegistrationViewController.swift */,
+				2D48C80D21068DAD00A3D217 /* AlertFactory.swift */,
+			);
+			path = PersonalCabUI;
+			sourceTree = "<group>";
+		};
+		2D48C8042106562500A3D217 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2D48C8052106564000A3D217 /* UserdefaultsExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2D50899C20FDF8BF00BF0234 /* WorkWithProductReviews */ = {
@@ -596,6 +635,7 @@
 				2D6A79742102160F0066E843 /* addGoodToBasket.json in Resources */,
 				2D5089B420FE28CB00BF0234 /* addReview.json in Resources */,
 				2D07D66E20F505BD00733B11 /* changeUserData.json in Resources */,
+				2D48C7FB2106066F00A3D217 /* PersonalCab.storyboard in Resources */,
 				2D07D66A20F5042000733B11 /* logout.json in Resources */,
 				2D07D67520F508F900733B11 /* catalogData.json in Resources */,
 				2D6A79762102162A0066E843 /* deleteGoodFromBasket.json in Resources */,
@@ -719,11 +759,11 @@
 			files = (
 				2D1F9DA720EE79EB00B26C9F /* AbstractRequestFactory.swift in Sources */,
 				2D6A796C21020A320066E843 /* AddGoodToBasket.swift in Sources */,
-				2D27116320F8D6E300537E21 /* TestNetwork.swift in Sources */,
 				2D5089BA20FE297400BF0234 /* DeleteReview.swift in Sources */,
 				2D5089B020FE26BD00BF0234 /* ResultOfGoodsReviews.swift in Sources */,
 				2D317C3920EB5ECC00CCAD72 /* AppDelegate.swift in Sources */,
 				2D1F9DA920EE7E9A00B26C9F /* RequestRouter.swift in Sources */,
+				2D48C80821065DC600A3D217 /* WelcomeViewController.swift in Sources */,
 				2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */,
 				2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */,
 				2D07D66820F5026200733B11 /* GoodByIdResult.swift in Sources */,
@@ -733,18 +773,22 @@
 				2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */,
 				2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */,
 				2D6A797021020A570066E843 /* PayOrder.swift in Sources */,
+				2D48C8062106564000A3D217 /* UserdefaultsExtension.swift in Sources */,
 				2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */,
 				2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */,
 				2D25FA7820F3A39B00CCE32C /* TakeGoodById.swift in Sources */,
 				2D6A796A210206550066E843 /* RequsetsToWorkWithBasket.swift in Sources */,
 				2D07D65E20F5012F00733B11 /* LoginResult.swift in Sources */,
 				2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */,
+				2D48C800210613C600A3D217 /* LoginController.swift in Sources */,
 				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
 				2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */,
 				2D5089A020FDFEDA00BF0234 /* Review.swift in Sources */,
 				2D50899E20FDFA1200BF0234 /* RequsetToProductReview.swift in Sources */,
 				2DEDA60320EF54DA00F68678 /* ConstantsInProject.swift in Sources */,
+				2D48C80A210666FB00A3D217 /* RegistrationViewController.swift in Sources */,
 				2D5089BC20FE298F00BF0234 /* TakeListOfGoodsReviews.swift in Sources */,
+				2D48C80E21068DAD00A3D217 /* AlertFactory.swift in Sources */,
 				2D25FA7C20F3A46300CCE32C /* Good.swift in Sources */,
 				2D6A796E21020A450066E843 /* DeleteGoodFromBasket.swift in Sources */,
 				2DEDA61220F39C5200F68678 /* RequestToWorkWithGoods.swift in Sources */,

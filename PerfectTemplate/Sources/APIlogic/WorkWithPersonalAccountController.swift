@@ -32,7 +32,7 @@ class WorkWithPersonalAccountController {
         }
     }
     
-    let login: (HTTPRequest, HTTPResponse) -> () = {request, response in
+    let login: (HTTPRequest, HTTPResponse) -> () = { request, response in
         
         guard
             
@@ -94,7 +94,7 @@ class WorkWithPersonalAccountController {
                 let idlogout = Int(arr[0].1)
                 if id == idlogout ?? -1 {
                     authUsersId = EdditingArray.deleteElementFromArray(element: id, arrOfElement: authUsersId)
-                    
+                    print("деавторизован - \(authUsersId)")
                     try response.setBody(json: ["result": 1, "userMessage": "Деавторизован"])
                     response.completed()
                 }
