@@ -1,7 +1,9 @@
 import Foundation
 import Alamofire
 
+/** Фабрика которая определяет запросы к API для работы с личным аккаунтом пользователя */
 protocol RequestsToPersonalAccountFactory {
+    
     func login(
         username: String,
         password: String,
@@ -19,12 +21,13 @@ protocol RequestsToPersonalAccountFactory {
         -> Void)
     
     func changeUserData(
-        user:User,
+        user: User,
         completionHandler: @escaping (DataResponse<StaticAPIResult>)
         -> Void)
 }
-
+/** Класс в котором создаются и настраиваются запросы к API для работы с личным аккаунтом пользователя */
 class RequestToPersonalAccount: AbstractRequestFactory, RequestsToPersonalAccountFactory {
+    
     var errorParser: AbstractErrorParser
     var sessionManager: SessionManager
     var queue: DispatchQueue?
@@ -33,7 +36,6 @@ class RequestToPersonalAccount: AbstractRequestFactory, RequestsToPersonalAccoun
     init (errorParser: AbstractErrorParser,
           sessionManager: SessionManager,
           queue: DispatchQueue? = DispatchQueue.global(qos: .utility)) {
-        
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue

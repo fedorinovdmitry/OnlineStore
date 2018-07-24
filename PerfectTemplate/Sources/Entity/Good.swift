@@ -1,14 +1,16 @@
 import Foundation
 
-struct Good {
+struct Good:Codable {
     let id: Int 
     var productName: String
     var productPrice: Int
+    var quantity:Int = 1 // по умолчанию количество товара равно 1
     
-    init (id:Int, productName: String, productPrice: Int) {
+    init (id:Int, productName: String, productPrice: Int, quantity: Int) {
         self.id = id
         self.productName = productName
         self.productPrice = productPrice
+        self.quantity = quantity
     }
     
     init? (_ json: [String:AnyObject]) {
@@ -22,12 +24,19 @@ struct Good {
         self.id = id
         self.productName = productName
         self.productPrice = productPrice
-        
+        if let quantity = json["quantity"] as? Int {
+            self.quantity = quantity
+        }
     }
+    
+    mutating func setQuantity(quantity: Int){
+        self.quantity = quantity
+    }
+    
     static func getArrayOfGoods() -> [Good] {
         var arr:[Good] = []
         for i in 1...10 {
-            arr.append(Good(id: 100 + i, productName: "tovar\(100 + i)", productPrice: 1000 + 1))
+            arr.append(Good(id: 100 + i, productName: "tovar\(100 + i)", productPrice: 1000 + 1, quantity: Int(arc4random_uniform(UInt32(100))) ))
         }
         return arr
     }

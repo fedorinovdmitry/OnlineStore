@@ -1,17 +1,16 @@
-//
-//  stubConfig.swift
-//  d.fedorinovTests
-//
-//  Created by Дмитрий Федоринов on 10.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
-
 import Alamofire
 import OHHTTPStubs
 @testable import d_fedorinov
 
-func stubConfig(method: HTTPMethod, path:String, resourceName:String, extensionType:String){
+/// Хелпер для конфигурации stub-а из библиотеки OHHTTPStubs
+/// - parameter method: метод запроса
+/// - parameter path: путь запроса
+/// - parameter resourceName: имя stub-а
+/// - parameter extensionType: тип stub-а
+func stubConfig(method: HTTPMethod,
+                path:String,
+                resourceName:String,
+                extensionType:String) {
     
     var condition = isMethodGET()
     switch method {
@@ -26,8 +25,12 @@ func stubConfig(method: HTTPMethod, path:String, resourceName:String, extensionT
     default:
         break
     }
+    
     stub(condition: condition && pathEndsWith(path)) { request in
-        let fileUrl = Bundle.main.url(forResource: resourceName, withExtension: extensionType)!
-        return OHHTTPStubsResponse(fileURL: fileUrl, statusCode: 200, headers: nil)
+        let fileUrl = Bundle.main.url(forResource: resourceName,
+                                      withExtension: extensionType)!
+        return OHHTTPStubsResponse(fileURL: fileUrl,
+                                   statusCode: 200,
+                                   headers: nil)
     }
 }

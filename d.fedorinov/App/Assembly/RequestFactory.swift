@@ -1,6 +1,7 @@
 import Foundation
 import Alamofire
 
+/** Фабрика пораждающая запросы к API */
 class RequestFactory {
     func makeErrorParser() -> AbstractErrorParser {
         return ErrorParser()
@@ -31,6 +32,12 @@ class RequestFactory {
     func makeRequsetsToWorkWithProductReviews() -> RequsetsToWorkWithProductReviewsFactory {
         let errorParser = makeErrorParser()
         return RequsetsToWorkWithProductReviews(errorParser: errorParser,
+                                                sessionManager: commonSessionManager,
+                                                queue: sessionQueue)
+    }
+    func makeRequsetsToWorkWithBasket() -> RequsetsToWorkWithBasketFactory {
+        let errorParser = makeErrorParser()
+        return RequsetsToWorkWithBasket(errorParser: errorParser,
                                                 sessionManager: commonSessionManager,
                                                 queue: sessionQueue)
     }

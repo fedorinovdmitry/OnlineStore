@@ -1,17 +1,10 @@
-//
-//  RequestRouter.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 05.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 
 enum RequestRouterEncoding{
     case url,json
 }
+/** Определяет и частично конфигурирует маршрут запроса */
 protocol RequestRouter: URLRequestConvertible {
     var baseUrl: URL { get }
     static var method: HTTPMethod { get }

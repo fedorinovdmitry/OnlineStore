@@ -1,14 +1,7 @@
-//
-//  AbstractRequestFactory.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 05.07.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 
+// Фабрика пораждающая осонвые конфигурационные данные для запроса и отправляющая эти данные в новый тип запроса из Аламофаера, подерживающий технологию Codable
 protocol AbstractRequestFactory {
     var errorParser: AbstractErrorParser { get }
     var sessionManager: SessionManager { get }
@@ -19,7 +12,7 @@ protocol AbstractRequestFactory {
         reques: URLRequestConvertible,
         completionHandler: @escaping (DataResponse<T>) -> Void) -> DataRequest
 }
-extension AbstractRequestFactory{
+extension AbstractRequestFactory {
     @discardableResult
     public func request <T: Decodable>(
         reques: URLRequestConvertible,

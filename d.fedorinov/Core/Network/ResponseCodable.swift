@@ -1,17 +1,20 @@
 import Foundation
 import Alamofire
 
-//расширение request из Alamofire, добавление возможности работы с любым типом, поддерживающим протокол Decodable
+//расширение request из Alamofire, добавление возможности работы с новой технологией "Codable"
 extension DataRequest {
     @discardableResult
     func responseCodable<T: Decodable>(
         errorParser: AbstractErrorParser,
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
-        let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
+        let responseSerializer = DataResponseSerializer<T> { request,
+                                                             response,
+                                                             data,
+                                                             error in
             if let error = errorParser.parse(response: response,
                                              data: data,
-                                             error: error){
+                                             error: error) {
                 return .failure(error)
             }
             let result = Request.serializeResponseData(response: response,
@@ -19,10 +22,11 @@ extension DataRequest {
                                                        error: nil)
             switch result{
             case .success(let data):
-                do{
-                    let value = try JSONDecoder().decode(T.self, from: data)
+                do {
+                    let value = try JSONDecoder().decode(T.self,
+                                                         from: data)
                     return .success(value)
-                }catch{
+                } catch {
                     let customError = errorParser.parse(error)
                     return .failure(customError)
                 }
@@ -35,7 +39,5 @@ extension DataRequest {
                         responseSerializer: responseSerializer,
                         completionHandler: completionHandler)
     }
-    
-    
 }
 

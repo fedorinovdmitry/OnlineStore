@@ -1,7 +1,8 @@
 import Foundation
 
+/** Структура хранящая данные пользователя */
 struct User: Codable{
-    var id: Int
+    let id: Int
     var username: String
     var password: String
     var email: String

@@ -1,5 +1,6 @@
 import Foundation
 
+/** Хранит урлы к по запросам к API */
 struct APPURL {
     static let baseUrlToAPI = "http://127.0.0.1:8080/"
     static let wayToLoginAPI = "login"
@@ -13,4 +14,8 @@ struct APPURL {
     static let wayToAddReview = "addReview"
     static let wayToDeleteReview = "deleteReview"
     static let wayToGetListOfGoodsReview = "listOfGoodsReview"
+    
+    static let wayToAddGoodInBasket = "addGoodToBasket"
+    static let wayToDeleteGoodFromBasket = "deleteGoodFromBasket"
+    static let wayToPayOrder = "payOrder"
 }
