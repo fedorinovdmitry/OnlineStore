@@ -38,10 +38,8 @@ class PersonalCabNetworkController: PersonalCabNetworkRequestsFactory {
         self.controller = controller
         
     }
-    //MARK: - LifeStyle ViewController
-    //MARK: - IBAction
     
-    
+
     //MARK: - Public methods
     
     

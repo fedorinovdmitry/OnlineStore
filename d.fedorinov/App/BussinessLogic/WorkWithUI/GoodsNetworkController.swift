@@ -12,7 +12,7 @@ protocol GoodsNetworkControllerRequestsFactory {
 
 typealias GoodsNetworkUIViewControllerDelegate = UITableViewController & GoodsNetworkControllerDelegate
 
-///Выполняет логику работы с сетью по запросам к личному кобинету клиента для View контроллеров
+///Выполняет логику работы с сетью по запросам работы товаров для View контроллеров
 class GoodsNetworController: GoodsNetworkControllerRequestsFactory {
     
     

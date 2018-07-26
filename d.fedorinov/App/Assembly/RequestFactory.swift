@@ -2,7 +2,6 @@ import Foundation
 import Alamofire
 
 /** Фабрика пораждающая запросы к API */
-//TODO: Singletone
 class RequestFactory {
     static let instance = RequestFactory()
     private init(){}
