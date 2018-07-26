@@ -8,20 +8,17 @@ protocol RequsetsToWorkWithBasketFactory {
         idUser: Int,
         idGood: Int,
         quantity: Int,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
     func deleteGoodFromBasket(
         idUser: Int,
         idGood: Int,
         quantity: Int,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
     func payOrder(
         idUser: Int,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
 }
 /** Класс в котором создаются и настраиваются запросы к API для работы с корзиной пользователя */
 class RequsetsToWorkWithBasket: AbstractRequestFactory, RequsetsToWorkWithBasketFactory {

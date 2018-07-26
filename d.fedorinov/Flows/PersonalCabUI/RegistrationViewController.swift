@@ -1,12 +1,17 @@
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: PersonalCabNetworkUIViewControllerDelegate {
 
-//MARK: - Constants
-    let requestFactoryToPersonalAccount = RequestFactory().makeRequestToPersonalAccount()
-    let alertFactory = AlertBornFactory()
     
-//MARK: - Outlets
+    //MARK: - Constants
+    
+    let requestFactoryToPersonalAccount = RequestFactory.instance.makeRequestToPersonalAccount()
+    let alertFactory = PersonalCapDependenceFactory.instance.makeAlertFactory()
+    lazy var delegatePersonalCabNetC: PersonalCabNetworkRequestsFactory = PersonalCapDependenceFactory.instance.makeNetworkControllersFactory().makePersonalCabNetworkControllerDelegate(controller: self)
+    
+    //MARK: - Outlets
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     
@@ -17,8 +22,9 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var creditCard: UITextField!
     @IBOutlet weak var bio: UITextField!
     
-
+    
     //MARK: - LifeStyle ViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let hideKeyboardGesture = UITapGestureRecognizer(target: self,
@@ -48,72 +54,86 @@ class RegistrationViewController: UIViewController {
                                                   object: nil)
     }
     
-//MARK: - IBAction
+    
+    //MARK: - IBAction
+    
     ///Метод регистрации
     @IBAction func endRegistration(_ sender: Any) {
-        
         if let count = login.text?.count,
-            count < 4 {
-            alertFactory.showRegisterError(controller: self)
+               count < 4 {
+            alertFactory.showAlert(controller: self,
+                                   title: "Registration error",
+                                   message: "input value of login textfield is < 5")
             return
         }
         if let count = password.text?.count,
-            count < 4 {
-            alertFactory.showRegisterError(controller: self)
+               count < 4 {
+            alertFactory.showAlert(controller: self,
+                                   title: "Registration error",
+                                   message: "input value of password textfield is < 5")
             return
         }
-        
-        let randomValue = Int(arc4random_uniform(UInt32(1000)))
-        let semaphore = DispatchSemaphore(value: 0)
-        var isRegister = false
-        
-        if  let email = email.text,
+        guard let login = login.text,
+            let password = password.text,
+            let email = email.text,
             let gender = gender.text,
             let creditCard = creditCard.text,
-            let bio = bio.text {
-            let user = User(id: randomValue,
-                            username: login.text!,
-                            password: password.text!,
+            let bio = bio.text
+            else {
+                return
+        }
+        delegatePersonalCabNetC.takeUserID(){ [weak self] userId in
+            guard let registrationController = self
+            else {
+                return
+            }
+            let user = User(id: userId,
+                            username: login,
+                            password: password,
                             email: email,
                             gender: gender,
                             creditCard: creditCard,
                             bio: bio)
-            
-            requestFactoryToPersonalAccount.registration(user: user) { response in
-                switch response.result {
-                case .success(let registration):
-                    print(registration)
-                    isRegister = true
-                    semaphore.signal()
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    semaphore.signal()
+            registrationController.delegatePersonalCabNetC.registration(user: user)
+            { [weak registrationController] isRegistred in
+                guard let controller = registrationController
+                    else{
+                        return
+                }
+                if isRegistred {
+                    controller.alertFactory.showAlert(controller: controller,
+                                                      title: "Registred",
+                                                      message: "Registred success")
+                    controller.performSegue(withIdentifier: "unwindRegistration",
+                                            sender: self)
+                }else {
+                    controller.alertFactory.showAlert(controller: controller,
+                                                      title: "Registration error",
+                                                      message: "")
                 }
             }
         }
         
-        semaphore.wait()
-        if isRegister {
-            alertFactory.showRegistrationSuccess(controller: self)
-        }else {
-            alertFactory.showRegisterError(controller: self)
-        }
     }
+    /// Путь на контроллер авторизации
     @IBAction func backToLogin(_ sender: Any) {
         self.performSegue(withIdentifier: "unwindRegistration",
                                 sender: self)
     }
     
-//MARK: - Private methods
+    
+    //MARK: - Private methods
+    
+    
+    //MARK: Keyboard methods
+    
     @objc private func keyboardWasShown(notification: Notification) {
-        
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsetsMake(0.0,
                                              0.0,
                                              kbSize.height,
                                              0.0)
-        
         self.scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
@@ -127,4 +147,5 @@ class RegistrationViewController: UIViewController {
     @objc private func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
+    
 }

@@ -7,23 +7,21 @@ protocol RequestsToPersonalAccountFactory {
     func login(
         username: String,
         password: String,
-        completionHandler: @escaping (DataResponse<LoginResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<LoginResult>) -> Void)
     
     func logOut(
         id: Int,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
     func registration(
         user: User,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
     func changeUserData(
         user: User,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
+    
+    func takeUserID(completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
 }
 /** Класс в котором создаются и настраиваются запросы к API для работы с личным аккаунтом пользователя */
 class RequestToPersonalAccount: AbstractRequestFactory, RequestsToPersonalAccountFactory {

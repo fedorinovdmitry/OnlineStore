@@ -1,92 +1,126 @@
 import UIKit
 import OHHTTPStubs
 
+private enum AuthStatus {
+    case isAuth
+    case isNotAuth
+}
 ///контроллер экрана авторизации
-class LoginController: UIViewController {
+class LoginController: PersonalCabNetworkUIViewControllerDelegate {
     
-//MARK: - Constants
-    let requestFactoryToPersonalAccount = RequestFactory().makeRequestToPersonalAccount()
-    let userDefaults = UserDefaults.standard
-    let alertFactory = AlertBornFactory()
+    //MARK: - Constants
     
-//MARK: - Outlets
+    //TODO: DI here
+    let requestFactoryToPersonalAccount = RequestFactory.instance.makeRequestToPersonalAccount()
+    let userDefaults = PersonalCapDependenceFactory.instance.makeUserDefaults()
+    let alertFactory = PersonalCapDependenceFactory.instance.makeAlertFactory()
+    lazy var delegatePersonalCabNetC: PersonalCabNetworkRequestsFactory = PersonalCapDependenceFactory.instance.makeNetworkControllersFactory().makePersonalCabNetworkControllerDelegate(controller: self)
+    
+    //MARK: - Outlets
+    
     @IBOutlet weak var contentViewContainer: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     
-//MARK: - LifeStyle ViewController
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self,
-                                                         action: #selector(self.hideKeyboard))
-        scrollView?.addGestureRecognizer(hideKeyboardGesture)
-        
-    }
+    
+    //MARK: - Private properties
+    private var isAuththorization:AuthStatus = .isNotAuth
+    private lazy var user: User? = nil
+    //MARK: - LifeStyle ViewController
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardWasShown),
-                                               name: NSNotification.Name.UIKeyboardWillShow,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardWillBeHidden(notification:)),
-                                               name: NSNotification.Name.UIKeyboardWillHide,
-                                               object: nil)
-        
+        nottificationCenterConfig()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tapRecongnizerConfig()
+        checkAuth()
+
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name.UIKeyboardWillShow,
-                                                  object: nil)
-        NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name.UIKeyboardWillHide,
-                                                  object: nil)
+        nottificationCenterClean()
     }
     
-//MARK: - Navigation
-    @IBAction func logOut(unwindSegue: UIStoryboardSegue) {
+    
+    //MARK: - IBAction
+    
+    @IBAction func authorization(_ sender: Any) {
         
-        guard let data = try? userDefaults.get(objectType: User.self,
-                                               forKey: "ActiveUser"),
-              let user = data
+        var login: String = ""
+        var password: String = ""
+        
+        if isAuththorization == .isAuth {
+            guard let authUser = user
             else {
                 return
-        }
-        requestFactoryToPersonalAccount.logOut(id: user.id) { response in
-            switch response.result {
-            case .success(let logout):
-                print(logout)
-            case .failure(let error):
-                print(error.localizedDescription)
             }
+            login = authUser.username
+            password = authUser.password
+        }else {
+            guard let loginInput = loginInput.text,
+                  let passwordInput = passwordInput.text,
+                  loginInput.count > 4,
+                  passwordInput.count > 4
+            else {
+                    alertFactory.showAlert(controller: self,
+                                           title: "Authorization Error",
+                                           message: "count of simbol is < 5")
+                    return
+            }
+            login = loginInput
+            password = passwordInput
         }
-    }
-    
-    @IBAction func registrationEnd (unwindSegue: UIStoryboardSegue) {}
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if identifier == "loginSuccess" {
-            let checkResult = authorithation()
-            if !checkResult {
-                alertFactory.showLoginError(controller: self)
+        delegatePersonalCabNetC.authorization(login: login,
+                                              password: password){ [weak self] isLogin in
+            guard let loginController = self
+            else {
+                return
             }
-            return checkResult
+            if isLogin {
+                loginController.performSegue(withIdentifier: "loginSuccess",
+                                   sender: self)
+            }else {
+                loginController.alertFactory.showAlert(controller: self!,
+                                                       title: "Authorization Error",
+                                                       message: "You need to register")
+            }
         }
-        if identifier == "registration" {
-            return true
-        }
-        return false
+        
     }
     
-//MARK: - Private methods
+    @IBAction func registration(_ sender: Any) {
+        isAuththorization = .isNotAuth
+        self.performSegue(withIdentifier: "registration",
+                          sender: self)
+    }
+    
+    
+    //MARK: - Navigation
+    
+    @IBAction func logOut(unwindSegue: UIStoryboardSegue) {
+        delegatePersonalCabNetC.logout()
+    }
+    
+    @IBAction func registrationEnd(unwindSegue: UIStoryboardSegue) {}
+    
+    
+    //MARK: - Private methods
+    
+    //TODO: delete it -> ЖЕНЬ КАК ЖЕ ХОЧЕТСЯ ПРОДЕЛЕГИРОВАТЬ ВСЕ ЭТИ МЕТОДЫ С КЛАВОЙ или хотя бы в общий экстеншен, НО Я НЕМОГУ НИЧЕГО ПРИДУМАТЬ ИЗ-ЗА ОБЖЕКТИВНЫХ МЕТОДОВ ИХ НЕЛЬЗЯ В ПРОТОКОЛ ЗАПИХАТЬ И ОТ ЭТОГО ГРУСТНО
+    
+    
+    //MARK: Keyboard methods
+    
     ///когда клавиатура появляется
     @objc private func keyboardWasShown(notification: Notification) {
-
+        
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsetsMake(0.0,
@@ -94,7 +128,7 @@ class LoginController: UIViewController {
                                              kbSize.height,
                                              0.0)
         
-
+        
         self.scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
@@ -112,38 +146,41 @@ class LoginController: UIViewController {
         self.scrollView.contentSize = self.contentViewContainer.frame.size
     }
     
-    private func authorithation() -> Bool {
-        let login = loginInput.text!
-        let password = passwordInput.text!
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
-        
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        
-        var isLogin = false
-        requestFactoryToPersonalAccount.login(username: login,
-                                              password: password) { response in
-            switch response.result {
-            case .success(let login):
-                if login.result == 1 {
-                    isLogin = true
-                    try? self.userDefaults.set(object:login.user,
-                                               forKey: "ActiveUser")
-                }
-                semaphore.signal()
-            case .failure(let error):
-                print(error.localizedDescription)
-                semaphore.signal()
-            }
-        }
-        semaphore.wait()
-        activityIndicator.stopAnimating()
-        return isLogin
+    
+    //MARK: Config methods
+    
+    private func nottificationCenterConfig() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWasShown),
+                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillBeHidden(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
     }
-
+    
+    private func nottificationCenterClean() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillShow,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillHide,
+                                                  object: nil)
+    }
+    
+    private func tapRecongnizerConfig() {
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self,
+                                                         action: #selector(self.hideKeyboard))
+        scrollView?.addGestureRecognizer(hideKeyboardGesture)
+    }
+    private func checkAuth() {
+        let isAuth = delegatePersonalCabNetC.checkAuthorization()
+        if (isAuth.status) {
+            isAuththorization = .isAuth
+            user = isAuth.user
+            authorization(self)
+        }
+    }
 }
 
