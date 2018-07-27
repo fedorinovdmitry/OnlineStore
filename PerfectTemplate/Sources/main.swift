@@ -28,10 +28,12 @@ let workWithBasketController = WorkWithBasketController()
 
 var routes = Routes()
 
+
 routes.add(method: .post, uri: "/register", handler: workWithPersonalAccountController.register)
 routes.add(method: .post, uri: "/login", handler: workWithPersonalAccountController.login)
 routes.add(method: .get, uri: "/logout", handler: workWithPersonalAccountController.logout)
 routes.add(method: .post, uri: "/changeUserData", handler: workWithPersonalAccountController.changeUserData)
+routes.add(method: .get, uri: "/giveUserID", handler: workWithPersonalAccountController.giveUserID)
 
 routes.add(method: .get, uri: "/getGoodById", handler: workWithGoodsController.giveGood)
 routes.add(method: .get, uri: "/catalogData", handler: workWithGoodsController.giveCatalogOfGoods)

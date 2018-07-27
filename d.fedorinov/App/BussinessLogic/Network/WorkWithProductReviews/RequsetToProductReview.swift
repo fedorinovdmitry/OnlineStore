@@ -6,18 +6,15 @@ protocol RequsetsToWorkWithProductReviewsFactory {
     
     func addReview(
         review: Review,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
     func deleteReview(
         review: Review,
-        completionHandler: @escaping (DataResponse<StaticAPIResult>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
     func takeGoodsReview(
         idGood: Int,
-        completionHandler: @escaping (DataResponse<ResultOfGoodsReviews>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<ResultOfGoodsReviews>) -> Void)
 }
 /** Класс в котором создаются и настраиваются запросы к API для работы с отзывами к товару */
 class RequsetsToWorkWithProductReviews: AbstractRequestFactory, RequsetsToWorkWithProductReviewsFactory {

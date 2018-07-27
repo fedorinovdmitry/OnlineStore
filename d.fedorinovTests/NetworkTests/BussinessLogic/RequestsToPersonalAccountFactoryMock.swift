@@ -102,5 +102,21 @@ class RequestsToPersonalAccountFactoryTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         XCTAssertNotNil(changeUserDataResult)
     }
+    
+    func testTakeUserID() {
+        let expectation = self.expectation(description: "testTakeUserID")
+        stubConfig(method: TakeUserIDRouter.method,
+                   path: TakeUserIDRouter.path,
+                   resourceName: "takeUserID",
+                   extensionType:"json")
+        
+        var takeUserIDResult: StaticAPIResult?
+        requestsToPersonalAccountFactory.takeUserID() { result in
+            takeUserIDResult = result.value
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+        XCTAssertNotNil(takeUserIDResult)
+    }
 }
 

@@ -5,13 +5,11 @@ import Alamofire
 protocol RequestsToWorkWithGoodsFactory {
     
     func takeCatalogDataOfGoods(
-        completionHandler: @escaping (DataResponse<[Good]>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<[Good]>) -> Void)
     /** Запрос получения конкретного товара по ид */
     func takeGood(
         id: Int,
-        completionHandler: @escaping (DataResponse<GoodByIdResponse>)
-        -> Void)
+        completionHandler: @escaping (DataResponse<GoodByIdResponse>) -> Void)
     
 }
 /** Класс в котором создаются и настраиваются запросы к API для работы с товарами */

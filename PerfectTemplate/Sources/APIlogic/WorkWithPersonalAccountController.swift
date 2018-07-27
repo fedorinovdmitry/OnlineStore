@@ -54,9 +54,14 @@ class WorkWithPersonalAccountController {
                         status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - wrong input value"))
                     return
             }
+            
             for user in users {
                 if user.username == username && user.password == password {
-                    
+                    for userId in authUsersId {
+                        if userId == user.id {
+                            authUsersId = EdditingArray.deleteElementFromArray(element: userId, arrOfElement: authUsersId)
+                        }
+                    }
                     try response.setBody(json: ["result": 1,
                                                 "user": ["id": user.id,
                                                          "username": user.username,
@@ -137,6 +142,32 @@ class WorkWithPersonalAccountController {
             
             try response.setBody(json: ["result": 0, "userMessage": "пользователь не найден"])
             response.completed()
+        } catch {
+            response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - \(error)"))
+        }
+    }
+    let giveUserID: (HTTPRequest, HTTPResponse) -> () = {request, response in
+        do {
+            var id = 0
+            if users.isEmpty {
+                id = 1
+            }else {
+                var max = 0
+                for user in users {
+                    if user.id > max {
+                        max = user.id
+                    }
+                }
+                id = max + 1
+            }
+            
+            var json:[String:AnyObject] = [:]
+            json["result"] = id as AnyObject
+            json["userMessage"] = "this is free user id" as AnyObject
+            print(json)
+            try response.setBody(json: json)
+            response.completed()
+            
         } catch {
             response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - \(error)"))
         }

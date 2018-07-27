@@ -3,6 +3,9 @@ import Alamofire
 
 /** Фабрика пораждающая запросы к API */
 class RequestFactory {
+    static let instance = RequestFactory()
+    private init(){}
+    
     func makeErrorParser() -> AbstractErrorParser {
         return ErrorParser()
     }
