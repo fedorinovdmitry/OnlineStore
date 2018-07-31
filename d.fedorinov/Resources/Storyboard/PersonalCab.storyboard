@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -413,7 +412,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="name" destination="qa6-vj-LQq" id="DkW-Gt-xSK"/>
-                        <segue destination="Zed-Hw-NXy" kind="show" identifier="listOfGoods" id="NqW-Mn-2Jr"/>
+                        <segue destination="LoV-za-7zl" kind="show" identifier="listOfGoods" id="UXZ-PL-d5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEg-h9-gpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -421,60 +420,13 @@
             </objects>
             <point key="canvasLocation" x="1380" y="-595.05247376311854"/>
         </scene>
-        <!--List Of Goods Table View Controller-->
-        <scene sceneID="Ooh-4u-2O4">
+        <!--Goods-->
+        <scene sceneID="RvG-Em-BKl">
             <objects>
-                <tableViewController id="Zed-Hw-NXy" customClass="ListOfGoodsTableViewController" customModule="d_fedorinov" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bib-mV-rqt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodViewCell" id="QdL-YO-rbZ" customClass="ListOfGoodsViewCell" customModule="d_fedorinov" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QdL-YO-rbZ" id="YEM-dW-D2w">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="name of good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyE-nb-5jb">
-                                            <rect key="frame" x="16" y="13" width="266" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" red="0.63529411759999999" green="0.4823529412" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbU-In-64u">
-                                            <rect key="frame" x="312" y="13" width="42" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="sbU-In-64u" firstAttribute="top" secondItem="YEM-dW-D2w" secondAttribute="topMargin" constant="2" id="5F6-cr-5xx"/>
-                                        <constraint firstItem="KyE-nb-5jb" firstAttribute="leading" secondItem="YEM-dW-D2w" secondAttribute="leadingMargin" constant="5" id="Gap-St-Gs9"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="sbU-In-64u" secondAttribute="bottom" constant="2" id="IJW-93-ngo"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="sbU-In-64u" secondAttribute="trailing" constant="5" id="W13-UL-9FM"/>
-                                        <constraint firstItem="KyE-nb-5jb" firstAttribute="top" secondItem="YEM-dW-D2w" secondAttribute="topMargin" constant="2" id="lwn-fh-5wm"/>
-                                        <constraint firstItem="sbU-In-64u" firstAttribute="leading" secondItem="KyE-nb-5jb" secondAttribute="trailing" constant="10" id="md0-do-gXH"/>
-                                        <constraint firstItem="KyE-nb-5jb" firstAttribute="bottom" secondItem="YEM-dW-D2w" secondAttribute="bottomMargin" constant="2" id="wl0-ok-L7d"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameOfGood" destination="KyE-nb-5jb" id="OCu-N0-nbx"/>
-                                    <outlet property="price" destination="sbU-In-64u" id="7Yc-hp-92V"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Zed-Hw-NXy" id="J3b-Vq-yQS"/>
-                            <outlet property="delegate" destination="Zed-Hw-NXy" id="CAY-Ee-Fhw"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Uc-C2-AQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Goods" referencedIdentifier="Goods" id="LoV-za-7zl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9K-VN-tHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149.5999999999999" y="-593.25337331334333"/>
+            <point key="canvasLocation" x="2127" y="-596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zst-4b-x4h">

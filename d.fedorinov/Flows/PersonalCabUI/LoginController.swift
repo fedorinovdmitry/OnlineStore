@@ -174,6 +174,7 @@ class LoginController: PersonalCabNetworkUIViewControllerDelegate {
                                                          action: #selector(self.hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
+    
     private func checkAuth() {
         let isAuth = delegatePersonalCabNetC.checkAuthorization()
         if (isAuth.status) {

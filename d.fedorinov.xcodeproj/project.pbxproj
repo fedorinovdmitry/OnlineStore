@@ -55,6 +55,11 @@
 		2D5089BA20FE297400BF0234 /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089B920FE297400BF0234 /* DeleteReview.swift */; };
 		2D5089BC20FE298F00BF0234 /* TakeListOfGoodsReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089BB20FE298F00BF0234 /* TakeListOfGoodsReviews.swift */; };
 		2D5089BE20FE2A3500BF0234 /* RequsetsToWorkWithProductReviewsFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089BD20FE2A3500BF0234 /* RequsetsToWorkWithProductReviewsFactoryMock.swift */; };
+		2D53B7B821104B9600C1D8EC /* Goods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D53B7B721104B9600C1D8EC /* Goods.storyboard */; };
+		2D53B7BC211065F800C1D8EC /* GoodCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7BB211065F800C1D8EC /* GoodCartViewController.swift */; };
+		2D53B7BE2110747A00C1D8EC /* ReviewTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7BD2110747A00C1D8EC /* ReviewTableController.swift */; };
+		2D53B7C221107F2300C1D8EC /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7C121107F2300C1D8EC /* ReviewTableViewCell.swift */; };
+		2D53B7C621108F1D00C1D8EC /* ReviewsNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7C521108F1D00C1D8EC /* ReviewsNetworkController.swift */; };
 		2D6A796A210206550066E843 /* RequsetsToWorkWithBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A7969210206550066E843 /* RequsetsToWorkWithBasket.swift */; };
 		2D6A796C21020A320066E843 /* AddGoodToBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A796B21020A320066E843 /* AddGoodToBasket.swift */; };
 		2D6A796E21020A450066E843 /* DeleteGoodFromBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */; };
@@ -155,6 +160,11 @@
 		2D5089B920FE297400BF0234 /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
 		2D5089BB20FE298F00BF0234 /* TakeListOfGoodsReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeListOfGoodsReviews.swift; sourceTree = "<group>"; };
 		2D5089BD20FE2A3500BF0234 /* RequsetsToWorkWithProductReviewsFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequsetsToWorkWithProductReviewsFactoryMock.swift; sourceTree = "<group>"; };
+		2D53B7B721104B9600C1D8EC /* Goods.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Goods.storyboard; sourceTree = "<group>"; };
+		2D53B7BB211065F800C1D8EC /* GoodCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCartViewController.swift; sourceTree = "<group>"; };
+		2D53B7BD2110747A00C1D8EC /* ReviewTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableController.swift; sourceTree = "<group>"; };
+		2D53B7C121107F2300C1D8EC /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		2D53B7C521108F1D00C1D8EC /* ReviewsNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsNetworkController.swift; sourceTree = "<group>"; };
 		2D6A7969210206550066E843 /* RequsetsToWorkWithBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequsetsToWorkWithBasket.swift; sourceTree = "<group>"; };
 		2D6A796B21020A320066E843 /* AddGoodToBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoodToBasket.swift; sourceTree = "<group>"; };
 		2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGoodFromBasket.swift; sourceTree = "<group>"; };
@@ -362,6 +372,7 @@
 		2D317C6720EB6F5D00CCAD72 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				2D53B7B621104A0100C1D8EC /* GoodsAndReview */,
 				2D48C7FC21060C1200A3D217 /* PersonalCabUI */,
 			);
 			path = Flows;
@@ -453,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				2D48C7FA2106066F00A3D217 /* PersonalCab.storyboard */,
+				2D53B7B721104B9600C1D8EC /* Goods.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -463,8 +475,6 @@
 				2D48C7FF210613C600A3D217 /* LoginController.swift */,
 				2D48C80721065DC600A3D217 /* WelcomeViewController.swift */,
 				2D48C809210666FB00A3D217 /* RegistrationViewController.swift */,
-				2DA446C1210A5AAC00C7EF0B /* ListOfGoodsTableViewController.swift */,
-				2DA446C3210A5C1E00C7EF0B /* ListOfGoodsViewCell.swift */,
 			);
 			path = PersonalCabUI;
 			sourceTree = "<group>";
@@ -488,6 +498,18 @@
 			path = WorkWithProductReviews;
 			sourceTree = "<group>";
 		};
+		2D53B7B621104A0100C1D8EC /* GoodsAndReview */ = {
+			isa = PBXGroup;
+			children = (
+				2DA446C1210A5AAC00C7EF0B /* ListOfGoodsTableViewController.swift */,
+				2DA446C3210A5C1E00C7EF0B /* ListOfGoodsViewCell.swift */,
+				2D53B7BB211065F800C1D8EC /* GoodCartViewController.swift */,
+				2D53B7BD2110747A00C1D8EC /* ReviewTableController.swift */,
+				2D53B7C121107F2300C1D8EC /* ReviewTableViewCell.swift */,
+			);
+			path = GoodsAndReview;
+			sourceTree = "<group>";
+		};
 		2D6A7968210205F10066E843 /* WorkWithBasket */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +526,7 @@
 			children = (
 				2DD9B3DA2109DB1900453A60 /* PersonalCabNetworkController.swift */,
 				2DA446BF210A54E500C7EF0B /* GoodsNetworkController.swift */,
+				2D53B7C521108F1D00C1D8EC /* ReviewsNetworkController.swift */,
 			);
 			path = WorkWithUI;
 			sourceTree = "<group>";
@@ -673,6 +696,7 @@
 				2D48C7FB2106066F00A3D217 /* PersonalCab.storyboard in Resources */,
 				2D07D66A20F5042000733B11 /* logout.json in Resources */,
 				2D07D67520F508F900733B11 /* catalogData.json in Resources */,
+				2D53B7B821104B9600C1D8EC /* Goods.storyboard in Resources */,
 				2D6A79762102162A0066E843 /* deleteGoodFromBasket.json in Resources */,
 				2D5089B220FE27FF00BF0234 /* listOfGoodsReview.json in Resources */,
 				2DD9B3E8210A392600453A60 /* takeUserID.json in Resources */,
@@ -803,7 +827,9 @@
 				2D48C80821065DC600A3D217 /* WelcomeViewController.swift in Sources */,
 				2DEDA5FD20EEB10100F68678 /* ChangeUserData.swift in Sources */,
 				2DEDA5FB20EEAAE600F68678 /* Registration.swift in Sources */,
+				2D53B7BE2110747A00C1D8EC /* ReviewTableController.swift in Sources */,
 				2D07D66820F5026200733B11 /* GoodByIdResult.swift in Sources */,
+				2D53B7C621108F1D00C1D8EC /* ReviewsNetworkController.swift in Sources */,
 				2D25FA7A20F3A40500CCE32C /* TakeCatalogDataOfGoods.swift in Sources */,
 				2D5089B820FE295F00BF0234 /* AddReview.swift in Sources */,
 				2D5089AE20FE117700BF0234 /* StaticAPIResult.swift in Sources */,
@@ -817,7 +843,9 @@
 				2D25FA7820F3A39B00CCE32C /* TakeGoodById.swift in Sources */,
 				2D6A796A210206550066E843 /* RequsetsToWorkWithBasket.swift in Sources */,
 				2D07D65E20F5012F00733B11 /* LoginResult.swift in Sources */,
+				2D53B7C221107F2300C1D8EC /* ReviewTableViewCell.swift in Sources */,
 				2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */,
+				2D53B7BC211065F800C1D8EC /* GoodCartViewController.swift in Sources */,
 				2D48C800210613C600A3D217 /* LoginController.swift in Sources */,
 				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
 				2DA446C0210A54E500C7EF0B /* GoodsNetworkController.swift in Sources */,

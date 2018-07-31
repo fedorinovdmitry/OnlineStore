@@ -3,9 +3,7 @@ import UIKit
 class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
 
     //MARK: - Constants
-    let requestFactoryToWorkWithGoods = RequestFactory.instance.makeRequestToWorkWithGoods()
-    let userDefaults = PersonalCapDependenceFactory.instance.makeUserDefaults()
-    let alertFactory = PersonalCapDependenceFactory.instance.makeAlertFactory()
+    
     lazy var delegateGoodsNetworkC: GoodsNetworkControllerRequestsFactory =
         NetworkDelegateControllersBornFactory().makeGoodsNetworkControllerDelegate(controller: self)
 
@@ -19,7 +17,7 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        takeCatalog ()
+        takeCatalog()
     }
     
     
@@ -38,6 +36,7 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
         
     }
     
+
 
     // MARK: - Table view data source
 
@@ -60,5 +59,15 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
     }
     
     
-
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "toGoodPage" {
+            let destination = segue.destination as? GoodCartViewController
+            if let selectedRow = tableView.indexPathForSelectedRow?.row {
+                destination?.good = arrOfGoods[selectedRow]
+            }
+        }
+    }
 }
+

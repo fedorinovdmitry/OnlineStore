@@ -5,6 +5,8 @@ protocol NetworkDelegateControllersFactory {
         -> PersonalCabNetworkRequestsFactory
     func makeGoodsNetworkControllerDelegate (controller: GoodsNetworkUIViewControllerDelegate)
         -> GoodsNetworkControllerRequestsFactory
+    func makeReviewsNetworkControllerDelegate (controller: ReviewsNetworkUIViewControllerDelegate)
+        -> ReviewsNetworkControllerRequestsFactory
 }
 
 ///Фабрика делегатов по работе с сетью
@@ -18,6 +20,11 @@ class NetworkDelegateControllersBornFactory: NetworkDelegateControllersFactory {
     func makeGoodsNetworkControllerDelegate (controller: GoodsNetworkUIViewControllerDelegate)
         -> GoodsNetworkControllerRequestsFactory {
             return GoodsNetworController(controller: controller)
+    }
+    
+    func makeReviewsNetworkControllerDelegate (controller: ReviewsNetworkUIViewControllerDelegate)
+        -> ReviewsNetworkControllerRequestsFactory {
+        return ReviewsNetworkController(controller: controller)
     }
     
 }

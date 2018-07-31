@@ -129,6 +129,7 @@ class PersonalCabNetworkController: PersonalCabNetworkRequestsFactory {
             }
         }
     }
+    
     func checkAuthorization () -> (status:Bool, user:User?) {
         if let data = try? userDefaults.get(objectType: User.self,
                                          forKey: "ActiveUser"),
@@ -146,6 +147,7 @@ class PersonalCabNetworkController: PersonalCabNetworkRequestsFactory {
         controller.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }
+    
     private func stopActivityIndcicator() {
         let tagAcivityIndicator = TagUIelement.activityIndicator
         if let activitiView = controller.view.viewWithTag(tagAcivityIndicator),

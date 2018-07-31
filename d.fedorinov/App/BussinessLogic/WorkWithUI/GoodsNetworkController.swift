@@ -1,4 +1,3 @@
-
 import Foundation
 import UIKit
 
@@ -34,7 +33,7 @@ class GoodsNetworController: GoodsNetworkControllerRequestsFactory {
     
     func takeCatalog(completionHandler: @escaping ([Good]) -> Void) {
         
-        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods(){ response in
+        requestFactoryToWorkWithGoods.takeCatalogDataOfGoods() { response in
             switch response.result {
             case .success(let login):
                 DispatchQueue.main.async {
