@@ -29,6 +29,11 @@ class WelcomeViewController: UIViewController {
                           sender: self)
     }
     
+    @IBAction func goToBasket(_ sender: Any) {
+        self.performSegue(withIdentifier: "basket",
+                          sender: self)
+    }
+    
     
     //MARK: - Private methods
     

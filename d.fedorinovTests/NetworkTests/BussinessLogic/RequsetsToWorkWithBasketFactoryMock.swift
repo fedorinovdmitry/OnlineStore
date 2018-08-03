@@ -42,6 +42,24 @@ class RequsetsToWorkWithBasketFactoryTests: XCTestCase {
         XCTAssertNotNil(addGoodToBasketResult)
     }
     
+    func testTakeBasket() {
+        let expectation = self.expectation(description: "testTakeBasket")
+        
+        stubConfig(method: TakeBasketRouter.method,
+                   path: TakeBasketRouter.path,
+                   resourceName: "catalogData",
+                   extensionType: "json")
+        
+        var takeBasketResult: [Good]?
+        requsetsToWorkWithBasketFactory.takeBasket(idUser: 123) { result in
+            takeBasketResult = result.value
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+        XCTAssertNotNil(takeBasketResult)
+    }
+    
     func testDeleteGoodFromBasket() {
         let expectation = self.expectation(description: "testDeleteGoodFromBasket")
         

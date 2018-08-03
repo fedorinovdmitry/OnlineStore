@@ -18,6 +18,7 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         takeCatalog()
+        tableView.reloadData()
     }
     
     
@@ -27,15 +28,22 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
         
         delegateGoodsNetworkC.takeCatalog(){ [weak self] arr in
             guard let listOfGoodTVC = self
-                else {
-                    return
-            }
+            else { return }
             listOfGoodTVC.arrOfGoods = arr
             listOfGoodTVC.tableView.reloadData()
         }
         
     }
     
+    private func configureCell(cell:ListOfGoodsViewCell, good:Good) -> ListOfGoodsViewCell {
+        cell.nameOfGood.text = good.productName
+        cell.price.text = String(good.productPrice)
+        cell.goodId = good.id
+        let quantity = good.quantity ?? 0
+        cell.quantity.text = String(quantity)
+        cell.controller = self
+        return cell
+    }
 
 
     // MARK: - Table view data source
@@ -49,12 +57,10 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "goodViewCell", for: indexPath) as! ListOfGoodsViewCell
         
+        var cell = tableView.dequeueReusableCell(withIdentifier: "goodViewCell", for: indexPath) as! ListOfGoodsViewCell
         let good = arrOfGoods[indexPath.row]
-        cell.nameOfGood.text = good.productName
-        cell.price.text = String(good.productPrice)
-
+        cell = configureCell(cell: cell, good: good)
         return cell
     }
     

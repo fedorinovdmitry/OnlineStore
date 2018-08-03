@@ -16,6 +16,10 @@ protocol RequsetsToWorkWithBasketFactory {
         quantity: Int,
         completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)
     
+    func takeBasket(
+        idUser: Int,
+        completionHandler: @escaping (DataResponse<[Good]>) -> Void)
+    
     func payOrder(
         idUser: Int,
         completionHandler: @escaping (DataResponse<StaticAPIResult>) -> Void)

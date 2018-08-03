@@ -19,7 +19,7 @@ class WorkWithBasketController {
             let idUser = json["idUser"] as! Int
             let idGood = json["idGood"] as! Int
             let quantity = json["quantity"] as! Int
-
+            
             var bufferGood:Good? = nil
             for good in arrOfGoods{
                 if good.id == idGood {
@@ -39,8 +39,45 @@ class WorkWithBasketController {
                 response.completed()
                 return
             }
-            
             goodGoToBasket.quantity = quantity
+            
+            
+            var basketBuffer:Basket? = nil
+            for basket in arrOfBaskets {
+                if basket.idUser == idUser {
+                    var arrOfGoods =  basket.arrOfGoods
+                    var isGood = false
+                    for good in basket.arrOfGoods {
+                        if good.id == idGood {
+                            var goodBuffer = good
+                            goodBuffer.quantity = goodBuffer.quantity + goodGoToBasket.quantity
+                            arrOfGoods = EdditingArray.chageElementsInArray(elementDeleting: good, elementAdding: goodBuffer, arrOfElement: arrOfGoods)
+                            isGood = true
+                        }
+                    }
+                    if isGood {
+                        basketBuffer = basket
+                        basketBuffer?.arrOfGoods = arrOfGoods
+                        arrOfBaskets = EdditingArray.chageElementsInArray(elementDeleting: basket, elementAdding: basketBuffer!, arrOfElement: arrOfBaskets)
+                        
+//                        for good in arrOfGoods{
+//                            if good.id == idGood {
+//                                print("количество товара \(good.id) после добавления равно = \(good.quantity)")
+//                            }
+//                        }
+//                        for basket in arrOfBaskets {
+//                            for good in basket.arrOfGoods {
+//                                print("basket id =\(basket.idUser) arr of goods =\(good.id) quantity \(good.quantity)")
+//                            }
+//                        }
+                        
+                        try response.setBody(json: ["result": 1, "userMessage": "Товар добавлен в корзину"])
+                        response.completed()
+                        return
+                    }
+                    
+                }
+            }
             
             var hasIdUser = false
             for basket in arrOfBaskets {
@@ -55,11 +92,11 @@ class WorkWithBasketController {
                 arrOfBaskets.append(basket)
             }
            
-            for good in arrOfGoods{
-                if good.id == idGood {
-                    print("количество товара   \(good.id) после добавления равно = \(good.quantity)")
-                }
-            }
+//            for good in arrOfGoods{
+//                if good.id == idGood {
+//                    print("количество товара \(good.id) после добавления равно = \(good.quantity)")
+//                }
+//            }
             
             try response.setBody(json: ["result": 1, "userMessage": "Товар добавлен в корзину"])
             response.completed()
@@ -69,6 +106,40 @@ class WorkWithBasketController {
         }
     }
     
+    let giveBasket: (HTTPRequest, HTTPResponse) -> () = { request, response in
+        do {
+            guard let idUserString = request.param(name: "idUser"),
+                let idUser = Int(idUserString)
+                else {
+                    response.completed(
+                        status: HTTPResponseStatus.custom(code: 400, message: "Parse data error dont see userID"))
+                    return
+            }
+            
+            for basket in arrOfBaskets {
+                if basket.idUser == idUser {
+                    
+                    var jsonDic: [[String:AnyObject]] = []
+                    
+                    for good in basket.arrOfGoods {
+                        var dic: [String:AnyObject] = [:]
+                        dic["id"] = good.id as AnyObject
+                        dic["productName"] = good.productName as AnyObject
+                        dic["productPrice"] = good.productPrice as AnyObject
+                        dic["quantity"] = good.quantity as AnyObject
+                        jsonDic.append(dic)
+                    }
+                    
+//                    print(jsonDic)
+                    try response.setBody(json: jsonDic)
+                    response.completed()
+                }
+            }
+            response.completed(status: HTTPResponseStatus.custom(code: 404, message: "Dont find such good"))
+        } catch {
+            response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - \(error)"))
+        }
+    }
     
     let deleteGoodFromBasket: (HTTPRequest, HTTPResponse) -> () = { request, response in
         guard

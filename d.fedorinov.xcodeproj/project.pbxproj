@@ -55,11 +55,19 @@
 		2D5089BA20FE297400BF0234 /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089B920FE297400BF0234 /* DeleteReview.swift */; };
 		2D5089BC20FE298F00BF0234 /* TakeListOfGoodsReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089BB20FE298F00BF0234 /* TakeListOfGoodsReviews.swift */; };
 		2D5089BE20FE2A3500BF0234 /* RequsetsToWorkWithProductReviewsFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5089BD20FE2A3500BF0234 /* RequsetsToWorkWithProductReviewsFactoryMock.swift */; };
+		2D51739A2114800900573D7C /* EdditingArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5173992114800900573D7C /* EdditingArray.swift */; };
 		2D53B7B821104B9600C1D8EC /* Goods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D53B7B721104B9600C1D8EC /* Goods.storyboard */; };
 		2D53B7BC211065F800C1D8EC /* GoodCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7BB211065F800C1D8EC /* GoodCartViewController.swift */; };
 		2D53B7BE2110747A00C1D8EC /* ReviewTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7BD2110747A00C1D8EC /* ReviewTableController.swift */; };
 		2D53B7C221107F2300C1D8EC /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7C121107F2300C1D8EC /* ReviewTableViewCell.swift */; };
 		2D53B7C621108F1D00C1D8EC /* ReviewsNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7C521108F1D00C1D8EC /* ReviewsNetworkController.swift */; };
+		2D53B7C82112EA3100C1D8EC /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D53B7C72112EA3100C1D8EC /* Basket.storyboard */; };
+		2D53B7CA2112EEDC00C1D8EC /* BasketNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7C92112EEDC00C1D8EC /* BasketNetworkController.swift */; };
+		2D53B7CC2112F56B00C1D8EC /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7CB2112F56B00C1D8EC /* ActiveUser.swift */; };
+		2D53B7CF21130A0300C1D8EC /* BasketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7CE21130A0300C1D8EC /* BasketTableViewController.swift */; };
+		2D53B7D12113101600C1D8EC /* GoodInBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7D02113101600C1D8EC /* GoodInBasketCell.swift */; };
+		2D53B7D32113103100C1D8EC /* LastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7D22113103100C1D8EC /* LastCell.swift */; };
+		2D53B7D721131EB000C1D8EC /* TakeBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7D621131EB000C1D8EC /* TakeBasket.swift */; };
 		2D6A796A210206550066E843 /* RequsetsToWorkWithBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A7969210206550066E843 /* RequsetsToWorkWithBasket.swift */; };
 		2D6A796C21020A320066E843 /* AddGoodToBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A796B21020A320066E843 /* AddGoodToBasket.swift */; };
 		2D6A796E21020A450066E843 /* DeleteGoodFromBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */; };
@@ -160,11 +168,19 @@
 		2D5089B920FE297400BF0234 /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
 		2D5089BB20FE298F00BF0234 /* TakeListOfGoodsReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeListOfGoodsReviews.swift; sourceTree = "<group>"; };
 		2D5089BD20FE2A3500BF0234 /* RequsetsToWorkWithProductReviewsFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequsetsToWorkWithProductReviewsFactoryMock.swift; sourceTree = "<group>"; };
+		2D5173992114800900573D7C /* EdditingArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdditingArray.swift; sourceTree = "<group>"; };
 		2D53B7B721104B9600C1D8EC /* Goods.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Goods.storyboard; sourceTree = "<group>"; };
 		2D53B7BB211065F800C1D8EC /* GoodCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCartViewController.swift; sourceTree = "<group>"; };
 		2D53B7BD2110747A00C1D8EC /* ReviewTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableController.swift; sourceTree = "<group>"; };
 		2D53B7C121107F2300C1D8EC /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		2D53B7C521108F1D00C1D8EC /* ReviewsNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsNetworkController.swift; sourceTree = "<group>"; };
+		2D53B7C72112EA3100C1D8EC /* Basket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Basket.storyboard; sourceTree = "<group>"; };
+		2D53B7C92112EEDC00C1D8EC /* BasketNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketNetworkController.swift; sourceTree = "<group>"; };
+		2D53B7CB2112F56B00C1D8EC /* ActiveUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
+		2D53B7CE21130A0300C1D8EC /* BasketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewController.swift; sourceTree = "<group>"; };
+		2D53B7D02113101600C1D8EC /* GoodInBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInBasketCell.swift; sourceTree = "<group>"; };
+		2D53B7D22113103100C1D8EC /* LastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCell.swift; sourceTree = "<group>"; };
+		2D53B7D621131EB000C1D8EC /* TakeBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeBasket.swift; sourceTree = "<group>"; };
 		2D6A7969210206550066E843 /* RequsetsToWorkWithBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequsetsToWorkWithBasket.swift; sourceTree = "<group>"; };
 		2D6A796B21020A320066E843 /* AddGoodToBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoodToBasket.swift; sourceTree = "<group>"; };
 		2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGoodFromBasket.swift; sourceTree = "<group>"; };
@@ -372,6 +388,7 @@
 		2D317C6720EB6F5D00CCAD72 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				2D53B7CD211308E500C1D8EC /* Basket */,
 				2D53B7B621104A0100C1D8EC /* GoodsAndReview */,
 				2D48C7FC21060C1200A3D217 /* PersonalCabUI */,
 			);
@@ -465,6 +482,7 @@
 			children = (
 				2D48C7FA2106066F00A3D217 /* PersonalCab.storyboard */,
 				2D53B7B721104B9600C1D8EC /* Goods.storyboard */,
+				2D53B7C72112EA3100C1D8EC /* Basket.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -483,6 +501,8 @@
 			isa = PBXGroup;
 			children = (
 				2D48C8052106564000A3D217 /* UserdefaultsExtension.swift */,
+				2D53B7CB2112F56B00C1D8EC /* ActiveUser.swift */,
+				2D5173992114800900573D7C /* EdditingArray.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,6 +530,16 @@
 			path = GoodsAndReview;
 			sourceTree = "<group>";
 		};
+		2D53B7CD211308E500C1D8EC /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				2D53B7CE21130A0300C1D8EC /* BasketTableViewController.swift */,
+				2D53B7D02113101600C1D8EC /* GoodInBasketCell.swift */,
+				2D53B7D22113103100C1D8EC /* LastCell.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
 		2D6A7968210205F10066E843 /* WorkWithBasket */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +547,7 @@
 				2D6A796B21020A320066E843 /* AddGoodToBasket.swift */,
 				2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */,
 				2D6A796F21020A570066E843 /* PayOrder.swift */,
+				2D53B7D621131EB000C1D8EC /* TakeBasket.swift */,
 			);
 			path = WorkWithBasket;
 			sourceTree = "<group>";
@@ -527,6 +558,7 @@
 				2DD9B3DA2109DB1900453A60 /* PersonalCabNetworkController.swift */,
 				2DA446BF210A54E500C7EF0B /* GoodsNetworkController.swift */,
 				2D53B7C521108F1D00C1D8EC /* ReviewsNetworkController.swift */,
+				2D53B7C92112EEDC00C1D8EC /* BasketNetworkController.swift */,
 			);
 			path = WorkWithUI;
 			sourceTree = "<group>";
@@ -700,6 +732,7 @@
 				2D6A79762102162A0066E843 /* deleteGoodFromBasket.json in Resources */,
 				2D5089B220FE27FF00BF0234 /* listOfGoodsReview.json in Resources */,
 				2DD9B3E8210A392600453A60 /* takeUserID.json in Resources */,
+				2D53B7C82112EA3100C1D8EC /* Basket.storyboard in Resources */,
 				2D317C4020EB5ECD00CCAD72 /* Assets.xcassets in Resources */,
 				2D07D65920F4E85F00733B11 /* login.json in Resources */,
 				2D5089B620FE28E600BF0234 /* deleteReview.json in Resources */,
@@ -834,28 +867,35 @@
 				2D5089B820FE295F00BF0234 /* AddReview.swift in Sources */,
 				2D5089AE20FE117700BF0234 /* StaticAPIResult.swift in Sources */,
 				2D1F9DA420EE73C900B26C9F /* ResponseCodable.swift in Sources */,
+				2D51739A2114800900573D7C /* EdditingArray.swift in Sources */,
 				2DD9B3DF210A16A700453A60 /* NetworkDelegateControllersFactory.swift in Sources */,
 				2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */,
 				2D6A797021020A570066E843 /* PayOrder.swift in Sources */,
+				2D53B7CA2112EEDC00C1D8EC /* BasketNetworkController.swift in Sources */,
 				2D48C8062106564000A3D217 /* UserdefaultsExtension.swift in Sources */,
 				2D317C7320EE6F8600CCAD72 /* ErrorParser.swift in Sources */,
 				2D1F9DB420EE974900B26C9F /* RequestFactory.swift in Sources */,
 				2D25FA7820F3A39B00CCE32C /* TakeGoodById.swift in Sources */,
 				2D6A796A210206550066E843 /* RequsetsToWorkWithBasket.swift in Sources */,
 				2D07D65E20F5012F00733B11 /* LoginResult.swift in Sources */,
+				2D53B7D32113103100C1D8EC /* LastCell.swift in Sources */,
 				2D53B7C221107F2300C1D8EC /* ReviewTableViewCell.swift in Sources */,
 				2DEDA60120EF4B0100F68678 /* RequestToPersonalAccount.swift in Sources */,
 				2D53B7BC211065F800C1D8EC /* GoodCartViewController.swift in Sources */,
 				2D48C800210613C600A3D217 /* LoginController.swift in Sources */,
+				2D53B7D12113101600C1D8EC /* GoodInBasketCell.swift in Sources */,
 				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
 				2DA446C0210A54E500C7EF0B /* GoodsNetworkController.swift in Sources */,
 				2DD9B3DD2109FE1300453A60 /* PersonalCapDependenceFactory.swift in Sources */,
+				2D53B7D721131EB000C1D8EC /* TakeBasket.swift in Sources */,
 				2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */,
+				2D53B7CF21130A0300C1D8EC /* BasketTableViewController.swift in Sources */,
 				2D5089A020FDFEDA00BF0234 /* Review.swift in Sources */,
 				2D50899E20FDFA1200BF0234 /* RequsetToProductReview.swift in Sources */,
 				2DEDA60320EF54DA00F68678 /* ConstantsInProject.swift in Sources */,
 				2DD9B3E2210A1C5400453A60 /* SupportingUIElementsFactory.swift in Sources */,
 				2D48C80A210666FB00A3D217 /* RegistrationViewController.swift in Sources */,
+				2D53B7CC2112F56B00C1D8EC /* ActiveUser.swift in Sources */,
 				2DD9B3DB2109DB1900453A60 /* PersonalCabNetworkController.swift in Sources */,
 				2DA446C4210A5C1E00C7EF0B /* ListOfGoodsViewCell.swift in Sources */,
 				2D5089BC20FE298F00BF0234 /* TakeListOfGoodsReviews.swift in Sources */,

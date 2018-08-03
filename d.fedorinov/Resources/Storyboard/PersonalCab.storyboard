@@ -374,6 +374,17 @@
                                             <action selector="listOfGoods:" destination="BkS-t5-egL" eventType="touchUpInside" id="eie-y9-yWQ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrO-u9-IAi">
+                                        <rect key="frame" x="158" y="199" width="59" height="33"/>
+                                        <color key="backgroundColor" red="0.90759711830000001" green="0.93810343350000003" blue="0.218165477" alpha="0.2323951199" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                        <state key="normal" title="Basket">
+                                            <color key="titleColor" red="0.63529411759999999" green="0.4823529412" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToBasket:" destination="BkS-t5-egL" eventType="touchUpInside" id="hzb-ja-3tL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -383,6 +394,8 @@
                                     <constraint firstItem="AAg-Bd-DtH" firstAttribute="centerX" secondItem="z0B-Ic-k6H" secondAttribute="centerX" id="WsQ-0v-kge"/>
                                     <constraint firstItem="eDx-qQ-FvZ" firstAttribute="top" secondItem="z0B-Ic-k6H" secondAttribute="top" constant="22" id="cEi-df-mzN"/>
                                     <constraint firstItem="qa6-vj-LQq" firstAttribute="top" secondItem="eDx-qQ-FvZ" secondAttribute="bottom" constant="10" id="cqK-k0-cmH"/>
+                                    <constraint firstItem="RrO-u9-IAi" firstAttribute="top" secondItem="AAg-Bd-DtH" secondAttribute="bottom" constant="40" id="pte-Um-rhd"/>
+                                    <constraint firstItem="RrO-u9-IAi" firstAttribute="centerX" secondItem="z0B-Ic-k6H" secondAttribute="centerX" id="tat-nU-ccM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -413,6 +426,7 @@
                     <connections>
                         <outlet property="name" destination="qa6-vj-LQq" id="DkW-Gt-xSK"/>
                         <segue destination="LoV-za-7zl" kind="show" identifier="listOfGoods" id="UXZ-PL-d5r"/>
+                        <segue destination="hGO-yt-TPv" kind="show" identifier="basket" id="uP7-up-bP9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEg-h9-gpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -427,6 +441,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9K-VN-tHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2127" y="-596"/>
+        </scene>
+        <!--Basket-->
+        <scene sceneID="eKc-aq-P82">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Basket" referencedIdentifier="Basket" id="hGO-yt-TPv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjj-a9-cr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2128" y="-525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zst-4b-x4h">

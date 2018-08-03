@@ -27,4 +27,15 @@ class NetworkDelegateControllersBornFactory: NetworkDelegateControllersFactory {
         return ReviewsNetworkController(controller: controller)
     }
     
+    func makeBasketNetworkControllerDelegate<T: BasketDelegate> (viewController: T) -> BasketNetworkControllerRequestsFactory? {
+        switch viewController {
+        case is BasketNetworkControllerDelegateToCell:
+            return BasketNetworkController(cell: viewController as! BasketNetworkControllerDelegateToCell)
+        case is BasketNetworkControllerDelegateToTabbleController:
+            return BasketNetworkController(tableController: viewController as! BasketNetworkControllerDelegateToTabbleController)
+        default:
+            return nil
+        }
+    }
+    
 }

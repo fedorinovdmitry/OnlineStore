@@ -18,7 +18,7 @@ struct Good:Codable {
             let id = json["id"] as? Int,
             let productName = json["productName"] as? String,
             let productPrice = json["productPrice"] as? Int
-            else{
+            else {
                 return nil
         }
         self.id = id

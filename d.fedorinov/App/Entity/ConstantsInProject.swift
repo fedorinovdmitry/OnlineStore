@@ -20,5 +20,6 @@ struct APPURL {
     static let wayToAddGoodInBasket = "addGoodToBasket"
     static let wayToDeleteGoodFromBasket = "deleteGoodFromBasket"
     static let wayToPayOrder = "payOrder"
+    static let wayToTakeBasket = "takeBasket"
     
 }

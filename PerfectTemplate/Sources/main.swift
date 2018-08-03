@@ -45,6 +45,7 @@ routes.add(method: .get, uri: "/listOfGoodsReview", handler: workWithProductRevi
 routes.add(method: .post, uri: "/addGoodToBasket", handler: workWithBasketController.addGoodToBasket)
 routes.add(method: .post, uri: "/deleteGoodFromBasket", handler: workWithBasketController.deleteGoodFromBasket)
 routes.add(method: .post, uri: "/payOrder", handler: workWithBasketController.payedBasket)
+routes.add(method: .get, uri: "/takeBasket", handler: workWithBasketController.giveBasket)
 
 
 server.addRoutes(routes)

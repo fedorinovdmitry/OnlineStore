@@ -10,7 +10,6 @@ class LoginController: PersonalCabNetworkUIViewControllerDelegate {
     
     //MARK: - Constants
     
-    //TODO: DI here
     let requestFactoryToPersonalAccount = RequestFactory.instance.makeRequestToPersonalAccount()
     let userDefaults = PersonalCapDependenceFactory.instance.makeUserDefaults()
     let alertFactory = PersonalCapDependenceFactory.instance.makeAlertFactory()
@@ -80,9 +79,7 @@ class LoginController: PersonalCabNetworkUIViewControllerDelegate {
         delegatePersonalCabNetC.authorization(login: login,
                                               password: password){ [weak self] isLogin in
             guard let loginController = self
-            else {
-                return
-            }
+            else { return }
             if isLogin {
                 loginController.performSegue(withIdentifier: "loginSuccess",
                                    sender: self)

@@ -12,6 +12,12 @@ struct Good: Codable{
         self.productName = productName
         self.productPrice = productPrice
     }
+    
+}
+extension Good: Equatable {
+    static func == (lhs: Good, rhs: Good) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 
