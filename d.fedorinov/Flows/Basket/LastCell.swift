@@ -1,11 +1,3 @@
-//
-//  LastCell.swift
-//  d.fedorinov
-//
-//  Created by Дмитрий Федоринов on 02.08.2018.
-//  Copyright © 2018 Дмитрий Федоринов. All rights reserved.
-//
-
 import UIKit
 
 class LastBasketCell: BasketNetworkControllerDelegateToCell {
@@ -17,9 +9,17 @@ class LastBasketCell: BasketNetworkControllerDelegateToCell {
     lazy var delegateBasketNetworkController: BasketNetworkinCell? = NetworkDelegateControllersBornFactory().makeBasketNetworkControllerDelegate(viewController: self)
     
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var totalPrice: UILabel!
     
+    
+    //MARK: - Public Properties
+    
     var controller:UITableViewController? = nil
+    
+    
+    //MARK: - IBAction
     
     @IBAction func payOrder(_ sender: Any) {
         
@@ -36,17 +36,6 @@ class LastBasketCell: BasketNetworkControllerDelegateToCell {
             
         }
         
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
