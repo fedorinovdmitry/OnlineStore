@@ -17,7 +17,7 @@ class ListOfGoodsViewCell: BasketNetworkControllerDelegateToCell {
     
     //MARK: - Public Properties
     
-    var goodId: Int? = nil
+    var good: Good? = nil
     var controller:UITableViewController? = nil
     
     
@@ -25,14 +25,16 @@ class ListOfGoodsViewCell: BasketNetworkControllerDelegateToCell {
     
     @IBAction func addToBasket(_ sender: Any) {
         
-        
-        
         guard let delegate = delegateBasketNetworkController,
-              let id = goodId,
+              let good = good,
               let controller = controller
         else { return }
-        delegate.addToBasket(idGood: id) {
-            self.alertFactory.showAlert(controller: controller, title: "Added", message: "Good added to basket")
+        delegate.addToBasket(idGood: good.id) { [weak self] in
+            guard let cell = self else { return }
+            
+            cell.track(AnalyticsEvent.addToCart(good: good))
+            
+            cell.alertFactory.showAlert(controller: controller, title: "Added", message: "Good added to basket")
             controller.tableView.reloadData()
         }
         
@@ -40,3 +42,6 @@ class ListOfGoodsViewCell: BasketNetworkControllerDelegateToCell {
     
  
 }
+
+//добавялем методы аналитики
+extension ListOfGoodsViewCell: TrackableMixin {}

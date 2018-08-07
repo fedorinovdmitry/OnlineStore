@@ -68,6 +68,8 @@
 		2D53B7D12113101600C1D8EC /* GoodInBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7D02113101600C1D8EC /* GoodInBasketCell.swift */; };
 		2D53B7D32113103100C1D8EC /* LastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7D22113103100C1D8EC /* LastCell.swift */; };
 		2D53B7D721131EB000C1D8EC /* TakeBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D53B7D621131EB000C1D8EC /* TakeBasket.swift */; };
+		2D5D698E211935ED00070AE2 /* TrackAnalitics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D698D211935ED00070AE2 /* TrackAnalitics.swift */; };
+		2D5D69902119392E00070AE2 /* NSObjetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D698F2119392E00070AE2 /* NSObjetExtension.swift */; };
 		2D6A796A210206550066E843 /* RequsetsToWorkWithBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A7969210206550066E843 /* RequsetsToWorkWithBasket.swift */; };
 		2D6A796C21020A320066E843 /* AddGoodToBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A796B21020A320066E843 /* AddGoodToBasket.swift */; };
 		2D6A796E21020A450066E843 /* DeleteGoodFromBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */; };
@@ -181,6 +183,8 @@
 		2D53B7D02113101600C1D8EC /* GoodInBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInBasketCell.swift; sourceTree = "<group>"; };
 		2D53B7D22113103100C1D8EC /* LastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCell.swift; sourceTree = "<group>"; };
 		2D53B7D621131EB000C1D8EC /* TakeBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeBasket.swift; sourceTree = "<group>"; };
+		2D5D698D211935ED00070AE2 /* TrackAnalitics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAnalitics.swift; sourceTree = "<group>"; };
+		2D5D698F2119392E00070AE2 /* NSObjetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjetExtension.swift; sourceTree = "<group>"; };
 		2D6A7969210206550066E843 /* RequsetsToWorkWithBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequsetsToWorkWithBasket.swift; sourceTree = "<group>"; };
 		2D6A796B21020A320066E843 /* AddGoodToBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoodToBasket.swift; sourceTree = "<group>"; };
 		2D6A796D21020A450066E843 /* DeleteGoodFromBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGoodFromBasket.swift; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				2D48C8052106564000A3D217 /* UserdefaultsExtension.swift */,
 				2D53B7CB2112F56B00C1D8EC /* ActiveUser.swift */,
 				2D5173992114800900573D7C /* EdditingArray.swift */,
+				2D5D698D211935ED00070AE2 /* TrackAnalitics.swift */,
+				2D5D698F2119392E00070AE2 /* NSObjetExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -621,7 +627,7 @@
 				2D317C3220EB5ECC00CCAD72 /* Frameworks */,
 				2D317C3320EB5ECC00CCAD72 /* Resources */,
 				ECEE7D4BF3B466F73B047C87 /* [CP] Embed Pods Frameworks */,
-				2D50899B20FDF53F00BF0234 /* ShellScript */,
+				2D50899B20FDF53F00BF0234 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -774,18 +780,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D50899B20FDF53F00BF0234 /* ShellScript */ = {
+		2D50899B20FDF53F00BF0234 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2ae68ae22d6cdec5e5f9255bb586ab0084a7186 7e610e78c7b67cfb73a5d4f3b1891360b5088022e31b33e0b343b66b543c667c";
 		};
 		2ED2F82BDB4B6DD85202C272 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -870,6 +877,7 @@
 				2D51739A2114800900573D7C /* EdditingArray.swift in Sources */,
 				2DD9B3DF210A16A700453A60 /* NetworkDelegateControllersFactory.swift in Sources */,
 				2D1F9DB620EEA3CC00B26C9F /* Deauthorization.swift in Sources */,
+				2D5D698E211935ED00070AE2 /* TrackAnalitics.swift in Sources */,
 				2D6A797021020A570066E843 /* PayOrder.swift in Sources */,
 				2D53B7CA2112EEDC00C1D8EC /* BasketNetworkController.swift in Sources */,
 				2D48C8062106564000A3D217 /* UserdefaultsExtension.swift in Sources */,
@@ -887,6 +895,7 @@
 				2D1F9DB220EE8A9300B26C9F /* Authorization.swift in Sources */,
 				2DA446C0210A54E500C7EF0B /* GoodsNetworkController.swift in Sources */,
 				2DD9B3DD2109FE1300453A60 /* PersonalCapDependenceFactory.swift in Sources */,
+				2D5D69902119392E00070AE2 /* NSObjetExtension.swift in Sources */,
 				2D53B7D721131EB000C1D8EC /* TakeBasket.swift in Sources */,
 				2D317C7120EE6EA000CCAD72 /* AbstractErrorParser.swift in Sources */,
 				2D53B7CF21130A0300C1D8EC /* BasketTableViewController.swift in Sources */,
@@ -1085,6 +1094,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "GeekBrains.d-fedorinov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1104,6 +1114,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "GeekBrains.d-fedorinov";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

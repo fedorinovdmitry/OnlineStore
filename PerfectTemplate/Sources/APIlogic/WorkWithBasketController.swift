@@ -60,17 +60,6 @@ class WorkWithBasketController {
                         basketBuffer?.arrOfGoods = arrOfGoods
                         arrOfBaskets = EdditingArray.chageElementsInArray(elementDeleting: basket, elementAdding: basketBuffer!, arrOfElement: arrOfBaskets)
                         
-//                        for good in arrOfGoods{
-//                            if good.id == idGood {
-//                                print("количество товара \(good.id) после добавления равно = \(good.quantity)")
-//                            }
-//                        }
-//                        for basket in arrOfBaskets {
-//                            for good in basket.arrOfGoods {
-//                                print("basket id =\(basket.idUser) arr of goods =\(good.id) quantity \(good.quantity)")
-//                            }
-//                        }
-                        
                         try response.setBody(json: ["result": 1, "userMessage": "Товар добавлен в корзину"])
                         response.completed()
                         return
@@ -116,12 +105,9 @@ class WorkWithBasketController {
                     return
             }
             
-            for basket in arrOfBaskets {
-                if basket.idUser == idUser {
-                    
-                    var jsonDic: [[String:AnyObject]] = []
-                    
-                    for good in basket.arrOfGoods {
+            var jsonDic: [[String:AnyObject]] = []
+            let basketFilterArray = arrOfBaskets.filter { $0.idUser == idUser }
+                .map { $0.arrOfGoods.map { good in
                         var dic: [String:AnyObject] = [:]
                         dic["id"] = good.id as AnyObject
                         dic["productName"] = good.productName as AnyObject
@@ -129,12 +115,13 @@ class WorkWithBasketController {
                         dic["quantity"] = good.quantity as AnyObject
                         jsonDic.append(dic)
                     }
-                    
-//                    print(jsonDic)
-                    try response.setBody(json: jsonDic)
-                    response.completed()
-                }
             }
+            
+            if jsonDic.isEmpty != true {
+                try response.setBody(json: jsonDic)
+                response.completed()
+            }
+            
             response.completed(status: HTTPResponseStatus.custom(code: 404, message: "Dont find such good"))
         } catch {
             response.completed(status: HTTPResponseStatus.custom(code: 500, message: "Parse data error - \(error)"))

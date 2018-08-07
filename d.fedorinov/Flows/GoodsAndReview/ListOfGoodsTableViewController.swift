@@ -29,6 +29,7 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
         delegateGoodsNetworkC.takeCatalog(){ [weak self] arr in
             guard let listOfGoodTVC = self
             else { return }
+            listOfGoodTVC.track(AnalyticsEvent.openList)
             listOfGoodTVC.arrOfGoods = arr
             listOfGoodTVC.tableView.reloadData()
         }
@@ -38,7 +39,7 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
     private func configureCell(cell:ListOfGoodsViewCell, good:Good) -> ListOfGoodsViewCell {
         cell.nameOfGood.text = good.productName
         cell.price.text = String(good.productPrice)
-        cell.goodId = good.id
+        cell.good = good
         let quantity = good.quantity ?? 0
         cell.quantity.text = String(quantity)
         cell.controller = self
@@ -77,3 +78,6 @@ class ListOfGoodsTableViewController: GoodsNetworkUIViewControllerDelegate  {
     }
 }
 
+
+//добавялем методы аналитики
+extension ListOfGoodsTableViewController: TrackableMixin {}

@@ -74,11 +74,11 @@ class BasketNetworkController: BasketNetworkControllerRequestsFactory {
                                                        quantity: quantity) { response in
             switch response.result {
             case .success(let addToBasketAnswer):
-                if addToBasketAnswer.result == 1 {
-                    DispatchQueue.main.async {
-                        completionHandler()
-                    }
+                guard addToBasketAnswer.result == 1 else { return }
+                DispatchQueue.main.async {
+                    completionHandler()
                 }
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }

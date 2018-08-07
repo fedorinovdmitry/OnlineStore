@@ -81,9 +81,11 @@ class LoginController: PersonalCabNetworkUIViewControllerDelegate {
             guard let loginController = self
             else { return }
             if isLogin {
+                loginController.track(AnalyticsEvent.login(controller: loginController, success: true))
                 loginController.performSegue(withIdentifier: "loginSuccess",
                                    sender: self)
-            }else {
+            } else {
+                loginController.track(AnalyticsEvent.login(controller: loginController, success: false))
                 loginController.alertFactory.showAlert(controller: self!,
                                                        title: "Authorization Error",
                                                        message: "You need to register")
@@ -103,6 +105,7 @@ class LoginController: PersonalCabNetworkUIViewControllerDelegate {
     
     @IBAction func logOut(unwindSegue: UIStoryboardSegue) {
         delegatePersonalCabNetC.logout()
+        self.track(AnalyticsEvent.logOut)
     }
     
     @IBAction func registrationEnd(unwindSegue: UIStoryboardSegue) {}
@@ -182,3 +185,5 @@ class LoginController: PersonalCabNetworkUIViewControllerDelegate {
     }
 }
 
+//добавялем методы аналитики
+extension LoginController: TrackableMixin {}

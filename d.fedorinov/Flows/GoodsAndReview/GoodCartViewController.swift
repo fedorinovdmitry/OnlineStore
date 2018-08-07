@@ -54,6 +54,10 @@ class GoodCartViewController: ReviewsNetworkUIViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tapRecongnizerConfig()
+        if let good = good {
+            self.track(AnalyticsEvent.openGood(good: good))
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,8 +85,12 @@ class GoodCartViewController: ReviewsNetworkUIViewControllerDelegate {
             delegateReviewNetworkController.sendReview(review: review) { [weak self] arr in
                 guard let goodCartVC = self
                     else {
+                        assertionFailure("Guard on controller when send review")
                         return
                 }
+                
+                goodCartVC.track(AnalyticsEvent.addReview(review: review))
+                
                 goodCartVC.takeReviews()
                 goodCartVC.sendbutton.isEnabled = true
             }
@@ -191,3 +199,6 @@ class GoodCartViewController: ReviewsNetworkUIViewControllerDelegate {
 
 }
 
+
+//добавялем методы аналитики
+extension GoodCartViewController: TrackableMixin {}

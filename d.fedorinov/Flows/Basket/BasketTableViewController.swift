@@ -64,8 +64,11 @@ class BasketTableViewController: BasketNetworkControllerDelegateToTabbleControll
         if editingStyle == .delete {
             let good = arrOfGoods[indexPath.row]
             let quantity = good.quantity ?? 1
+            
             deleteGoodFromBasket(idGood: good.id, quantity: quantity)
             arrOfGoods = EdditingArray.deleteElementFromArray(element: good, arrOfElement: arrOfGoods)
+            
+            self.track(AnalyticsEvent.deleteFromCart(good: good))
             
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
@@ -80,16 +83,20 @@ class BasketTableViewController: BasketNetworkControllerDelegateToTabbleControll
         else { return }
         delegate.takeBasket() { [weak self] arr in
             guard let basketController = self
-                else { return }
+                else {
+                    assertionFailure("Basket Guard when take it")
+                    return
+            }
             basketController.arrOfGoods = arr
             basketController.tableView.reloadData()
         }
     }
     
-    private func deleteGoodFromBasket(idGood: Int, quantity: Int) {
-        guard let delegate = delegateBasketNetworkController
-            else { return }
-        delegate.deleteGoodFromBasket(idGood: idGood, quantity: quantity)
+    private func deleteGoodFromBasket(idGood: Int,
+                                      quantity: Int) {
+        guard let delegate = delegateBasketNetworkController else { return }
+        delegate.deleteGoodFromBasket(idGood: idGood,
+                                      quantity: quantity)
     }
     
     private func totalSum() -> String {
@@ -103,3 +110,6 @@ class BasketTableViewController: BasketNetworkControllerDelegateToTabbleControll
     
 
 }
+
+//добавялем методы аналитики
+extension BasketTableViewController: TrackableMixin {}

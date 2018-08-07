@@ -1,4 +1,6 @@
 import UIKit
+import Crashlytics
+
 
 class WelcomeViewController: UIViewController {
 
@@ -20,7 +22,6 @@ class WelcomeViewController: UIViewController {
         setName()
         
     }
-    
     
     //MARK: - IBAction
     

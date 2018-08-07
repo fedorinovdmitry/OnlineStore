@@ -1,7 +1,7 @@
 import UIKit
 
 
-///Ячейка
+///Ячейка отзыва
 class ReviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var idUser: UILabel!

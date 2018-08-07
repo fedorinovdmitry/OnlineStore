@@ -84,9 +84,7 @@ class RegistrationViewController: PersonalCabNetworkUIViewControllerDelegate {
         }
         delegatePersonalCabNetC.takeUserID(){ [weak self] userId in
             guard let registrationController = self
-            else {
-                return
-            }
+            else { return }
             let user = User(id: userId,
                             username: login,
                             password: password,
@@ -94,19 +92,29 @@ class RegistrationViewController: PersonalCabNetworkUIViewControllerDelegate {
                             gender: gender,
                             creditCard: creditCard,
                             bio: bio)
-            registrationController.delegatePersonalCabNetC.registration(user: user)
-            { [weak registrationController] isRegistred in
+            
+            registrationController.delegatePersonalCabNetC.registration(user: user) {
+                [weak registrationController] isRegistred in
+                
                 guard let controller = registrationController
-                    else{
-                        return
-                }
+                else { return }
+                
                 if isRegistred {
+                    controller.track(AnalyticsEvent.signUp(controller: controller,
+                                                           success: true,
+                                                           username: user.username,
+                                                           id: user.id))
+                    
                     controller.alertFactory.showAlert(controller: controller,
                                                       title: "Registred",
                                                       message: "Registred success")
                     controller.performSegue(withIdentifier: "unwindRegistration",
                                             sender: self)
                 }else {
+                    controller.track(AnalyticsEvent.signUp(controller: controller,
+                                                           success: false,
+                                                           username: user.username,
+                                                           id: user.id))
                     controller.alertFactory.showAlert(controller: controller,
                                                       title: "Registration error",
                                                       message: "")
@@ -149,3 +157,6 @@ class RegistrationViewController: PersonalCabNetworkUIViewControllerDelegate {
     }
     
 }
+
+//добавялем методы аналитики
+extension RegistrationViewController: TrackableMixin {}

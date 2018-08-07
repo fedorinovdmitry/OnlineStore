@@ -32,7 +32,7 @@ extension ReviewTableController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as? ReviewTableViewCell,
               let reviews = reviews
         else {
-            assertionFailure()
+            assertionFailure("Review Cell cast guard")
             return UITableViewCell()
         }
         

@@ -29,6 +29,7 @@ class LastBasketCell: BasketNetworkControllerDelegateToCell {
         delegate.payOrder() { [weak self] in
             guard let cell = self
             else { return }
+            cell.track(AnalyticsEvent.purchase)
             cell.alertFactory.alertWithPop(controller: controller,
                                            title: "Payed",
                                            message: "Order payed")
@@ -39,3 +40,6 @@ class LastBasketCell: BasketNetworkControllerDelegateToCell {
     }
 
 }
+
+//добавялем методы аналитики
+extension LastBasketCell: TrackableMixin {}
